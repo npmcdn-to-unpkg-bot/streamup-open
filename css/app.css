@@ -1,6 +1,6 @@
 @import url(../bower_resources/bootstrap/dist/css/bootstrap.min.css);
 @import url(flaticon.css);
-@import url(bower_resources/font-awesome/css/font-awesome.min.css);
+@import url(../bower_resources/font-awesome/css/font-awesome.min.css);
 @import url(notification.css);
 /*@import url(/lib/ionic/css/ionic.css);*/
 /*@import url(css/toastr.min.css);*/
@@ -183,5 +183,5 @@ font-family:tahoma, arial, sans-serif;
    border-top-right-radius: 0;
 
  }
- 
+
 /*# sourceMappingURL=app.css.map */

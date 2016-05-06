@@ -10,7 +10,7 @@ sync.controller('uploadDialogCtrl', ['$scope','$uibModal','$mdDialog','$mdMedia'
 		      $mdDialog.show({
 						parent: angular.element(document.body),
 		        controller: DialogController,
-		        templateUrl: '/App/scripts/views/upload.tpl.html',
+		        templateUrl: 'views/upload.tpl.html',
 		        parent: angular.element(document.body),
 		        targetEvent: ev,
 		        clickOutsideToClose:false
@@ -45,7 +45,7 @@ sync.controller('shareController', ['$scope','$uibModal','$mdDialog','$mdMedia',
 		$mdDialog.show({
 			parent: angular.element(document.body),
 			controller: DialogController,
-			templateUrl: '/App/scripts/views/share.tpl.html',
+			templateUrl: 'views/share.tpl.html',
 			parent: angular.element(document.body),
 			targetEvent: ev,
 			clickOutsideToClose:false
@@ -76,7 +76,7 @@ sync.controller('shareController', ['$scope','$uibModal','$mdDialog','$mdMedia',
 
 
 	$scope.shareFile = function(vm){
-		
+
 		var emails=vm.emails;
 		var email_array = emails.split(',');
 		var i;

@@ -81,16 +81,16 @@ sync.config(['$sceProvider','$httpProvider','$mdThemingProvider','cfpLoadingBarP
     $httpProvider.defaults.headers.post['Accept'] = 'application/json, text/javascript';
     //set authorization for oauth2.0 for protection
 
+
     $httpProvider.defaults.headers.common['authorization'] = 'Bearer Bc7DWS7KKRLtxmddUZI1T1lZu2J1YhR8OLXGWNZn';
 
-    $httpProvider.defaults.useXDomain = true;
+    // $httpProvider.defaults.useXDomain = true;
     $sceProvider.enabled(false);
 
     cfpLoadingBarProvider.includeBar = false;
 }]);
 sync.config(['$stateProvider','$urlRouterProvider',function($stateProvider, $urlRouterProvider,$scope){
         // $parseProvider.unwrapPromises(true) ;
-
           for(var path in window.routes) {
 
               // if(next.indexOf(path) != -1) {
@@ -103,54 +103,6 @@ sync.config(['$stateProvider','$urlRouterProvider',function($stateProvider, $url
           }
 
           $urlRouterProvider.otherwise('/Files');
-
-        // $urlRouterProvider.otherwise('/Files');
-        // $stateProvider.
-        // state('/Feeds', {
-        //   url: "/Feeds",
-        //   templateUrl : 'views/feeds.html',
-        //   controller  : 'PostingController'
-        // })
-        // .state('/Groups', {
-        //   url: "/Groups",
-        //   templateUrl: 'views/groups.html',
-        //   controller: 'GroupController'
-        // })
-        //
-        // .state('/Upload', {
-        //   url: "/Upload",
-        //   templateUrl: 'views/Upload.html',
-        //   controller: 'UploadController'
-        // })
-        // .state('/Files', {
-        //   url: "/Files",
-        //   templateUrl: 'views/files.html',
-        //   controller : 'FilesController'
-        //
-        // })
-        //
-        // .state('preview', {
-        //     url: '/!/:preview/:extension/:of/:user',
-        //     templateUrl: 'views/filePreview.html',
-        //     controller : 'previewController'
-        //   })
-        //
-        // .state('/People', {
-        //   url: "/People",
-        //   templateUrl: 'views/people.html',
-        //   controller: 'PeopleController'
-        // })
-        //
-        // .state('/Notifications', {
-        //   url: "/Notifications",
-        //   templateUrl: 'views/notifications.html',
-        //   controller: 'notificationController'
-        // })
-        // .state('/Settings', {
-        //   url: "/Settings",
-        //   templateUrl: 'views/settings.html',
-        //   controller: 'SettingsController'
-        // });
 
 }]);
 //-----------------------done with Muragijimana Richard <beastar457@gmail.com>---------------//
