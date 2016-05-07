@@ -1,5 +1,7 @@
 // --Author Muragijimana Richard <beastar457@gmail.com>
 // var sync = angular.module("sync", ["ngRoute","angularFileUpload","ionic","ngResource","ui.bootstrap","infinite-scroll"]);
+// module.exports = mongoose.model('appConfig', {
+
 angular.module('AuthManager',[]).service('SessionService', [function(){
     var userIsAuthenticated = false;
 
@@ -105,5 +107,7 @@ sync.config(['$stateProvider','$urlRouterProvider',function($stateProvider, $url
           $urlRouterProvider.otherwise('/Files');
 
 }]);
+
+// });
 //-----------------------done with Muragijimana Richard <beastar457@gmail.com>---------------//
 //-----------------------deal with user's actions and interaction with other users---------------//

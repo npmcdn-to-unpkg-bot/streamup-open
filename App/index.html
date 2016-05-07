@@ -1,4 +1,5 @@
-<meta charset="utf-8" >
+<!doctype html>
+<html  ng-app="sync">
 <head>
       <title>StreamUpBox-Home</title>
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,17 +9,21 @@
       <link rel="shortcut icon" href="/img/shortcuticon.ico">
       <meta name="Copyright" content="strimup  ltd">
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <link rel="stylesheet" href="../css/app.css">
-      
-      <link rel="stylesheet" href="../css/style.css">
+      <link rel="stylesheet" href="css/app.css">
+
+      <link rel="stylesheet" href="css/style.css">
 
       <!-- <link rel="stylesheet" href="../flaticon.css"> -->
-      <link rel="stylesheet" href="../css/common.css">
+      <link rel="stylesheet" href="css/common.css">
       <!-- <link rel="stylesheet" href="css/circle-menu.min.css"> -->
       <!-- <link rel="stylesheet" href="lib/ionic/css/angular-material.min.css"> -->
-      <link rel="stylesheet" href="../bower_resources/angular-material/angular-material.css">
+      <link rel="stylesheet" href="bower_resources/angular-material/angular-material.css">
       <!-- <link rel="stylesheet" href="/vendor/css/bootstrap-tagsinput.css" media="screen" title="no title" charset="utf-8"> -->
       <link rel="stylesheet" type="text/css" href="../css/_notification.css">
+      <script src="build/scripts/angular.js"></script>
+      <script src="build/scripts/modules.js"></script>
+
+      <script src="bower_resources/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
       <!-- <link rel="stylesheet" href="bower_resources/angular-loading-bar/src/loading-bar.css"> -->
         <style>
             md-sidenav,
@@ -30,15 +35,11 @@
             }
         </style>
     </head>
-<body ng-app="sync" layout="column">
+<body layout="column">
   <md-content id="content" >
     <div ui-view></div>
   </md-content>
-  <!-- <script src="https://apis.google.com/js/client.js"> </script> -->
-  <script src="../build/scripts/angular.js"></script>
-  <script src="../build/scripts/modules.js"></script>
-  <!--<script src="App/vendor/toastr.min.js"></script>-->
-  <script src="../bower_resources/ngInfiniteScroll/build/ng-infinite-scroll.js"></script><!--insert it after angular load and before appConfig-->
-  <!--<script src="vendor/hoverCard.js"></script>-->
+
+
 </body>
 </html>
