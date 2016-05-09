@@ -26,7 +26,7 @@ sync.service('Files', ['$http','$q','$rootScope',function Files ($http,$q,$rootS
         var groupId = 1;//by default this can be any number
         var differed = $q.defer();
         //the idea is to get a file either from groups or individual account group is optional
-        $http.get($rootScope.endPoint + '/api/v1/groups/'+groupId+'/boxfiles')
+        $http.get($rootScope.endPoint + '/api/v1/files/'+groupId+'/boxfiles')
         .success(function(response){
           differed.resolve(response);
         })

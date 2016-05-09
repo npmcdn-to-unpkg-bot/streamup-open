@@ -115,7 +115,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = {
 	    url: "/",
 	    alias: "file",
-	    headers: {'authorization': 'Bearer Bc7DWS7KKRLtxmddUZI1T1lZu2J1YhR8OLXGWNZn'},
+	    headers: {'authorization': 'Bearer 8EuqcMNkF2yP50Dicpv9hLRRp7WOSabPlCu22liY'},
 	    queue: [],
 	    progress: 0,
 	    autoUpload: false,

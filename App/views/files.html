@@ -1,5 +1,5 @@
 
-<header></header>
+<!-- <header></header> -->
 <style>
   md-toolbar.md-default-theme {
     background-color: #FFFFFF;
@@ -19,9 +19,10 @@
   <md-sidenav ng-style="hideOnPreview" layout="column" flex="10"
   md-component-id="left"
   md-is-locked-open="$mdMedia('gt-sm')">
-          <ul>
+
             <!-- sidebar part here -->
-          </ul>
+            <left-menu></left-menu>
+          
   </md-sidenav>
 
   <md-content flex="20" md-is-locked-open="$mdMedia('gt-sm')" layout="column" ng-controller="notificationController">

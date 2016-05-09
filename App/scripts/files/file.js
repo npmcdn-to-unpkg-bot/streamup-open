@@ -9,6 +9,8 @@ sync.controller('FilesController',
 		$scope, Files,$log,$window,User,$uibModal,$interval,pdfDelegate,$timeout,$stateParams,$rootScope,$exceptionHandler) {
 
 	  $scope.init = function(){
+      // alert('here I am called');
+
       //load all box files
 		    $scope.all();
 	  };
@@ -23,10 +25,11 @@ sync.controller('FilesController',
     $scope.dataLoading = true;
 		Files.getBoxFiles()
 			.then(function(res){
-				$scope.files 	=	res;
 
+				$scope.files 	=	res;
+        console.log(res);
 			}, function(error){
-				// console.log(error);
+				console.log(error);
 			})
       .finally(function () {
           $scope.dataLoading = false;
@@ -120,7 +123,7 @@ sync.directive('droppable', ['userInteractionNotification','Files',function(user
               function(e) {
                   e.dataTransfer.dropEffect = 'move';
                   // allows us to drop
-                  
+
                   if (e.preventDefault) e.preventDefault();
                   this.classList.add('over');
                   return false;
@@ -143,7 +146,7 @@ sync.directive('droppable', ['userInteractionNotification','Files',function(user
                   return false;
               },
               false
-          ); 
+          );
           el.addEventListener(
             'drop',
                 function(e) {
@@ -155,8 +158,8 @@ sync.directive('droppable', ['userInteractionNotification','Files',function(user
                     var binId = this.id;
                     var item = document.getElementById(e.dataTransfer.getData('Text'));
                     // console.log('Item now is:'+item);
-                    
-                    
+
+
                     try{
                       // call the passed drop function
                         this.appendChild(item);
@@ -174,7 +177,7 @@ sync.directive('droppable', ['userInteractionNotification','Files',function(user
                       // throw( new Error(e))
                       // userInteractionNotification.error("Drop File on folder to move it!");
                     }
-                    
+
                 },
                 false
         );
@@ -183,14 +186,14 @@ sync.directive('droppable', ['userInteractionNotification','Files',function(user
 }]);
 sync.controller('DragDropCtrl', ['$scope','Files','$interval',function($scope,Files,$interval) {
 
-  
+
     $scope.handleDrop = function() {
       // 1)if moved only when it reach on folder allow move
       // 2)take th id of file moved and take id of folder move file into folder
 
        //move the item into where it is droped
        //the first thing here is to recalculate the array to keep the arrangement intact
-       
-        
+
+
     }
 }]);

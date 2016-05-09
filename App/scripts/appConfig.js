@@ -84,7 +84,7 @@ sync.config(['$sceProvider','$httpProvider','$mdThemingProvider','cfpLoadingBarP
     //set authorization for oauth2.0 for protection
 
 
-    $httpProvider.defaults.headers.common['authorization'] = 'Bearer Bc7DWS7KKRLtxmddUZI1T1lZu2J1YhR8OLXGWNZn';
+    $httpProvider.defaults.headers.common['authorization'] = 'Bearer 8EuqcMNkF2yP50Dicpv9hLRRp7WOSabPlCu22liY';
 
     // $httpProvider.defaults.useXDomain = true;
     $sceProvider.enabled(false);
