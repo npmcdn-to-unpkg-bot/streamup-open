@@ -42,7 +42,7 @@ Please follow the [contribution guidelines](https://github.com/richard457/stream
 
 ## Development
 
-We use [Waffle.io](https://waffle.io/) as our project management tool, you can check what's going on here: [Soundnode App status](https://waffle.io/richard457/streamup-open)
+We use [Waffle.io](https://waffle.io/) as our project management tool, you can check what's going on here: [StreamUpBox App status](https://waffle.io/richard457/streamup-open)
 
 
 
