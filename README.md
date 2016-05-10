@@ -1,5 +1,5 @@
 [![Stories in Ready](https://badge.waffle.io/Soundnode/soundnode-app.png?label=roadmap&title=roadmap)](https://waffle.io/Soundnode/soundnode-app)
-StreamupBox (hacking version) A
+StreamupBox (hacking version) 
 ============
 
 StreamUpBox (hacking Version)  App Based on StreamUpBox API is an Open-Source project to support StreamUpBox for desktop Mac, Windows, and Linux. <br>
@@ -36,20 +36,20 @@ And much more!
 First, building, testing, and reporting bugs is highly appreciated. Please include console's output and steps to reproduce the problem in your bug report if possible.
 
 If you want to develop, you can look at the issues, especially the bugs and then fix them.
-Here's a [list of issues](https://github.com/Soundnode/soundnode-app/issues?state=open).
+Here's a [list of issues](https://github.com/richard457/streamup-open/issues?state=open).
 
-Please follow the [contribution guidelines](https://github.com/Soundnode/soundnode-app/blob/master/CONTRIBUTING.md).
+Please follow the [contribution guidelines](https://github.com/richard457/streamup-open/blob/master/CONTRIBUTING.md).
 
 ## Development
 
-We use [Waffle.io](https://waffle.io/) as our project management tool, you can check what's going on here: [Soundnode App status](https://waffle.io/Soundnode/soundnode-app)
+We use [Waffle.io](https://waffle.io/) as our project management tool, you can check what's going on here: [Soundnode App status](https://waffle.io/richard457/streamup-open)
 
-Check out how to run at [NW.js page](https://github.com/nwjs/nw.js/wiki/How-to-run-apps)
+
 
 atom don't support mp3 and h264 in video and audio tag by default because of patented media formats.
 but here's how you can [support audio](https://github.com/Soundnode/soundnode-app/wiki/Support-mp3-and-h264-in-video-and-audio-tag) and develop.
 <br>
-See the [Development page](https://github.com/Soundnode/soundnode-app/wiki/Development)
+See the [Development page](https://github.com/richard457/streamup-open/wiki/Development)
 
 ## Supported Platforms
 
