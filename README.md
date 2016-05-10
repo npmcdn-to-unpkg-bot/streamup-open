@@ -1,5 +1,5 @@
 [![Stories in Ready](https://badge.waffle.io/Soundnode/soundnode-app.png?label=roadmap&title=roadmap)](https://waffle.io/Soundnode/soundnode-app)
-Soundnode App
+StreamupBox (hack) App
 ============
 
 StreamUpBox (hacking Version)  App Based on StreamUpBox API is an Open-Source project to support StreamUpBox for desktop Mac, Windows, and Linux. <br>
