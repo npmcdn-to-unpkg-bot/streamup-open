@@ -5,7 +5,7 @@ Soundnode App
 StreamUpBox (hacking Version)  App Based on StreamUpBox API is an Open-Source project to support StreamUpBox for desktop Mac, Windows, and Linux. <br>
 It's built with atom , Node.js, Angular.js, and it uses the StreamUpBox API.
 
-![alt tag](https://raw.githubusercontent.com/richard457/streamup-oepn/master/app.png)
+![alt tag](https://raw.githubusercontent.com/richard457/streamup-open/master/app.png)
 
 ## Features
 
