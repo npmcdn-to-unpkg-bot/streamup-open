@@ -11,6 +11,8 @@ sync.service('Files', ['$http','$q','$rootScope',function Files ($http,$q,$rootS
         })
         return differed.promise;
     };
+    
+
     this.single = function(file){
       var promise = $q.defer();
       $http.get($rootScope.endPoint+ '/preview/'+ file)

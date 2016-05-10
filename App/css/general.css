@@ -1,13 +1,23 @@
-body {
-	margin: 0;
-	vertical-align: middle;
+md-sidenav,
+md-sidenav.md-locked-open,
+md-sidenav.md-closed.md-locked-open-add-active {
+	min-width: 100px !important;
+	width: 45vw !important;
+	max-width: 100px !important;
 }
-
-footer {
-	margin-top: 10px;
+md-toolbar.md-default-theme {
+	background-color: #FFFFFF;
+	color: #fff;
 }
-
-video {
-	border: 1px solid #000;
-	border-radius: 2px;
+.md-icon-button{
+	color: #ccc;
+}
+.md-button.md-default-theme:not([disabled]) {
+	background-color: #BDC0CE;
+}
+img{
+	width: 80px;
+}
+.logout{
+	margin-left:760px;font-size:16px;
 }

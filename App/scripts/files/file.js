@@ -5,14 +5,15 @@
 /* global sync */
 sync.controller('FilesController',
  [
-	'$scope','Files','$log','$window','User','$uibModal','$interval','pdfDelegate','$timeout','$stateParams','$rootScope','$exceptionHandler', function (
-		$scope, Files,$log,$window,User,$uibModal,$interval,pdfDelegate,$timeout,$stateParams,$rootScope,$exceptionHandler) {
+	'$scope','Files','$log','$window','User','$uibModal','$interval','pdfDelegate','$timeout','$stateParams','$rootScope','$exceptionHandler','Fetcher', function (
+		$scope, Files,$log,$window,User,$uibModal,$interval,pdfDelegate,$timeout,$stateParams,$rootScope,$exceptionHandler,Fetcher) {
 
 	  $scope.init = function(){
       // alert('here I am called');
 
       //load all box files
 		    $scope.all();
+        $scope.crazy();
 	  };
 
 
@@ -20,14 +21,26 @@ sync.controller('FilesController',
 			// $scope.all();
    //  }, 8000);
 
+   $scope.crazy = function(){
+      var users='{users{email,id}}';
 
+      Fetcher.fetch(users)
+      .then(function(res){
+        $scope.crazy  = res;
+        console.log(res);
+
+      }, function(error){
+        console.log(error);
+
+      })
+    };
 	 $scope.all = function(){
     $scope.dataLoading = true;
 		Files.getBoxFiles()
 			.then(function(res){
 
 				$scope.files 	=	res;
-        console.log(res);
+        // console.log(res);
 			}, function(error){
 				console.log(error);
 			})
