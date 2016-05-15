@@ -1,8 +1,9 @@
-var Todo = require('./models/init');
+// var Todo = require('./models/init');
 // var appConfig = require('./scripts/appConfig');
 
 
     // initate node to start working application -------------------------------------------------------------
+
 
     module.exports = function (app) {
         // application -------------------------------------------------------------

@@ -13,11 +13,11 @@ md-toolbar.md-default-theme {
 	color: #ccc;
 }
 .md-button.md-default-theme:not([disabled]) {
-	background-color: #BDC0CE;
+	/*background-color: blue;*/
 }
 img{
 	width: 80px;
 }
 .logout{
-	margin-left:760px;font-size:16px;
+	margin-left:760px;font-size:14px;
 }

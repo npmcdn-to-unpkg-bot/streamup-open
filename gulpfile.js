@@ -32,7 +32,7 @@ elixir(function(mix) {
 
 input  = {
       'html': './App/views/*.html',
-      'javascript':  './App/scripts/**/*.js'
+      'javascript':  './App/src/**/*.js'
     },
 
     output = {

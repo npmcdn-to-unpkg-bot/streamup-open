@@ -1,6 +1,4 @@
-
 <!-- <header></header> -->
-
 <div layout="row" flex>
   <md-sidenav ng-style="hideOnPreview" layout="column" flex="10"
   md-component-id="left"
@@ -34,7 +32,7 @@
   </div>
 
 
-  <table class="rwd-table" ng-controller="FilesController" style="min-width:700px;margin-top:120px;">
+  <table class="rwd-table" ng-controller="FilesController" style="min-width:700px;margin-top:120px;" ui-sortable ng-model="file">
     <thead>
       <th>Type</th>
       <th>Name</th>
