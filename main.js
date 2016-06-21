@@ -1,6 +1,6 @@
 'use strict';
-
 var _ = require('lodash');
+// var remote = require('remote');
 var app = require('app');
 var path = require('path');
 var BrowserWindow = require('browser-window');

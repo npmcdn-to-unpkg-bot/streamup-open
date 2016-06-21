@@ -1,64 +1,54 @@
-Contributing to Electron Boilerplate
----
+# How to contribute
 
-Thank you for considering to help contribute to our source code and to make Electron Boilerplate even better than it is today! Here are some of the guidelines we would like you to follow:
+If you would like to contribute to the project please follow the guidelines set out below. Keep in mind that they are not here to make your contribution a painful experience, but to simplify our jobs looking through hundreds of issues and pull requests (making it a 30 minute task instead of a 4 hour job!)
 
-- [Issues and Bugs](#issues)
-- [Feature Request](#feature-request)
-- [Submission Guidelines](#submission)
-- [Submitting a Pull Request](#pull-request)
+## Pull Request
 
-## <a name="issues"></a> Found an Issue?
+Pull Request for new features, bugs or translations are often appreciated. However please follow the following guidelines to save as much time as possible for the maintainer.
 
-If you find a bug in the source code or a mistake in the documentation/wikis, you can help remedy it by submitting an issue to [Github Repository](https://github.com/Stephn-R/Electron-Boilerplate/issues)
+- __Make your commit message as descriptive as possible.__ Include as much information as you can. Explain anything that the file diffs themselves won’t make apparent.
+- __Document your pull request__. Explain your fix, link to the relevant issue. A pull request without any comment will get closed.
+- __Consolidate multiple commits into a single commit when you rebase.__ If you’ve got several commits in your local repository that all have to do with a single change, you can squash multiple commits into a single, clean, descriptive commit when using git-rebase. When you do, good karma is yours.
+- __Make sure the target of your pull request is the relevant dev branch__. Most of bugfix or new feature should go to the `master` branch.
+- __Include only commits fixing a specific issue__. If your pull request has unrelated commit, it will get closed.
 
-***Please see the Submission Guidelines below***
+### UI changes
 
-## <a name="feature-request"></a> Want a feature?
+You can changes UI but keep in mind that We would like to beat dropbox!
+Which means that our disign should be as much simple as possible
+and respect existing format or looke dropbox disign format for example how they list files.
 
-You can request a new feature by submitting an issue to our [Github Repository](https://github.com/Stephn-R/Electron-Boilerplate). If you would like to implement a new feature yourself then consider what kind of change it is:
+## Report a bug
 
-- ***Major Changes***: that can dramatically change the core functionality of the plugin
-- ***Small Changes***: can be crafted and submitted to the [Github Repository](https://github.com/Stephn-R/Electron-Boilerplate) as a Pull Request
+Before reporting any issues, please use the search tools to see if someone filed the same bug before.
 
-## <a name="submission"></a> Submission Guidelines:
+When creating a new issue make sure to include the following:
+- Version of StreamUpBox App used. Are you running from source? Which revision? Are you using a released build? Which release?
+- Your environment. What is your operating system? 32 or 64 bits?
+- Step to reproduce. Even if the step is only to open the app, __include it!__ Include the actual result and what you expected.
+- Messages you get when running from console with the `--debug` parameter.
+- A screenshot of any visual bug.
 
-_Before you submit an issue, search the archive. Your question may have already been answered._
-
-If your issue appears to be a bug, and hasn't been reported, open a new issue. Help us to maximize the effort we can spend fixing issues and adding new features by not reporting duplicate issues. Providing the following information will increase the chances of your issue being dealt with quickly:
-
-- **Overview of the Issue** - if an error is being thrown, a _non minified_ stack trace helps
-- **Motivation for or Use Case** - explain why this is a bug for you
-- **Versioning** - is this issue being caused because of an outdated plugin?
-- **Operating Systems** - is this a problem that is unique to your Operating System?
-- **Reproduce the Error** - provide steps on how to re-create the error
-- **Related Issues** - has a similar issue been reported before?
-- **Suggest a fix** - if you can't fix the bug yourself, perhaps you can point to what might be causing the problem (i.e. line of code or commit)
-
-## <a name="pull-request"></a> Submitting a Pull Request
-
-Before you submit a pull request consider the following guidelines:
-
-- Search [Github](https://github.com/Stephn-R/Electron Boilerplate/pulls) for an open or closed PR that relates to your submission. You do not want to duplicate effort.
-- Make your changes in a new git branch:
-```bash
-git checkout -b my-fix-branch master
+Here is what a great bug report would look like:
 ```
-- Commit your changes using a descriptive commit message that easily describes the resolution. Please note that providing a further description can be made in the PR submission form
-```bash
-git commit -a
-```
-- Push your branch to Github
-```bash
-git push origin my-fix-branch
-```
-- In Github, submit a PR to ```Electron-Boilerplate```
-- If we suggest changes then:
-	- Make the required updates
-	- Rebase your branch and force push to your Github Repo _(this will update your PR)_:
-	```bash
-	git rebase master -i
-	git push origin my-fix-branch -f
-	```
+File not Shared to my Friend.
 
-**That's it! Thank you for your contribution**
+Version: Release 0.2.7 
+Downloaded from: streamupbox.com
+OS: Windows 7 64bits
+
+How to reproduce:
+ - Open StreamUpBox App
+
+Actual result:
+ - Loading all files from testing user from streamupbox
+ - List them out.
+
+Console output:
+[6239:0317/031639:INFO:CONSOLE(0)] "event.returnValue is deprecated. Please use the standard event.preventDefault() instead.", source:  (0)
+...
+```
+
+## Feature suggestions
+
+Create a issue with name [FEATURE SUGGESTION]

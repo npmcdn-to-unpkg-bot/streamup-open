@@ -1,112 +1,74 @@
-# Electron-Boilerplate
-A template for Electron projects to build/publish Mac/Windows/Linux compatible applications
+[![Stories in Ready](https://badge.waffle.io/Soundnode/soundnode-app.png?label=roadmap&title=roadmap)](https://waffle.io/Soundnode/soundnode-app)
+StreamupBox (hacking version) 
+============
 
-[![Circle CI](https://circleci.com/gh/Stephn-R/electron-angular-boilerplate.svg?style=svg&circle-token=6a9c22099623944c66e2c82e5a11fdd0eb9c2bdf)](https://circleci.com/gh/Stephn-R/electron-angular-boilerplate) [![Dependency Status](https://david-dm.org/Stephn-R/Electron-Angular-Boilerplate.svg)](https://david-dm.org/Stephn-R/Electron-Angular-Boilerplate) [![devDependency Status](https://david-dm.org/Stephn-R/Electron-Angular-Boilerplate/dev-status.svg)](https://david-dm.org/Stephn-R/Electron-Angular-Boilerplate#info=devDependencies)
+StreamUpBox (hacking Version)  App Based on StreamUpBox API is an Open-Source project to support StreamUpBox for desktop Mac, Windows, and Linux. <br>
+It's built with atom , Node.js, Angular.js, and it uses the StreamUpBox API.
 
-### Table of Contents:
----
+![alt tag](https://raw.githubusercontent.com/richard457/streamup-open/master/app.png)
 
-1. [Installation](#install)
-2. [The Stack](#stack)
-3. [Adding new views](#views)
-4. [Adding/Managing Bower Resources](#bower)
-5. [Building the Desktop Application](#build-app)
-6. [Testing](#testing)
-7. [FAQ](#faq)
+## Features
 
-### <a name="install"></a> Installation:
+- No need to install
+- Native media keyboard shortcuts
+- Search for new public available Files
+- Request a files From your friend if not available in public access
+- Easy navigation
+- List any files of any type
+- Share any File to anyone
+- Protect your Files by password on Share
+- Fun with Listening to songs from your box, Likes, Tracks, Following or Playlists
+- Like songs and save to your liked playlist
+- Full playlist feature
+- Follow/Unfollow users
 
-The application runs using Node 4.2.4. I recommend using [nvm](https://github.com/creationix/nvm) to manage your node versions. In addition, node-sass is required globally.
+And much more!
 
-For development, run:
+## Reasons to contribute
 
-```shell
-./scripts/load_globals.sh
-sudo npm install --python=python2.7
-npm start
-```
+- You will learn new things
+- You will have a typical reason to be the First beating of dropBox
+- 1000+ daily users
+- 100 + downloads
 
-#### Known Bugs:
+## How to contribute
 
-Node-sass may fail the `npm start` command. I recommend running the following command to fix this:
+First, building, testing, and reporting bugs is highly appreciated. Please include console's output and steps to reproduce the problem in your bug report if possible.
 
-```
-npm i -g node-sass
-npm rebuild node-sass
-```
+If you want to develop, you can look at the issues, especially the bugs and then fix them.
+Here's a [list of issues](https://github.com/richard457/streamup-open/issues?state=open).
 
-As for preparing the Windows/Mac/Linux apps for distribution. You will first need to run the ```npm install```. Afterwards, run the following to build all the apps for all architectures and distributions:
+Please follow the [contribution guidelines](https://github.com/richard457/streamup-open/blob/master/CONTRIBUTING.md).
 
-```shell
-# Requires GNU Make to be installed
-make
-```
+## Development
 
-### <a name="stack"></a> The Stack:
+We use [Waffle.io](https://waffle.io/) as our project management tool, you can check what's going on here: [StreamUpBox App status](https://waffle.io/richard457/streamup-open)
 
-The App Stack includes various tools and frameworks. Below is a list of those items and their intended purpose:
 
-- **AngularJS**: Client Side Web-App Stack
-- **Bower**: Managing CSS/JS dependencies (i.e. AngularJS)
-- **Gulp**: Build Automation for compiling Sass + other resources before Electron
-- **Gnu-Make**: Lower level build automation via the terminal (bash)
-- **Jest**: Testing framework for ES6/JS modules + code coverage support
-- **JSPM**: ES6 and Module importing support
-- **Karma/Jasmine**: Testing framework for AngularJS + code coverage support
-- **Node.js**: Running the Electron/Desktop Application
-- **Sass**: Enhanced Stylesheets
-- **Skeleton CSS**: Normalized + Simple CSS Grid framework
-- **Travis**: CI (Continous Integration) support
-- **Wiredep**: Injecting Bower dependencies into the HTML files
 
-If you would like to suggest another tool or framework, please refer to the [CONTRIBUTING.md](/CONTRIBUTING.md) before submitting an issue.
+atom don't support mp3 and h264 in video and audio tag by default because of patented media formats.
+but here's how you can [support audio](https://github.com/Soundnode/soundnode-app/wiki/Support-mp3-and-h264-in-video-and-audio-tag) and develop.
+<br>
+See the [Development page](https://github.com/richard457/streamup-open/wiki/Development)
 
-### <a name="views"></a> Adding new views
+## Supported Platforms
 
-Thanks to the use of Gulp and Wiredep, it is recommended that all new views be written in the `views` directory as `.html` files in order to take advantage of the resource injection tool. The compiled views are then dumped into the same folder with all dependencies (even new ones) injected.
+- Linux
+- Windows
+- Mac
 
-### <a name="bower"></a> Adding/Managing Bower Resources
 
-In order to add a new resource, simply install + save it using bower. Below is an example using jQuery
+## Author
 
-```shell
-bower install --save jquery
-```
+- [Muragijimana Richard](https://github.com/richard457)
 
-And thats it. Since we are using Gulp + Wiredep, all bower dependencies will be included on pages supporting the Wiredep tags.
+## Contributors
 
-### <a name="build-app"></a> Building the Desktop Application
+Thanks to the friends from [Youthoughts](http://Youthoughts.com/) for a lot help provided.
 
-Since the app was built using Node.js, you only need to run the following command for development testing:
+and Thanks to all [contributors](https://github.com/richard457/streamup-open/graphs/contributors) that are helping or helped to make StreamUpBox better.
 
-```shell
-npm start
-```
+## License
 
-npm start will run the latest build and then launch the application.
-
-In order to only build the latest code run:
-
-```shell
-gulp
-```
-
-As for building the final Desktop Application. You can use any of the following make commands to build them:
-
-- Mac: `make mac-64`
-- Windows 32-Bit: `make windows`
-- Windows 64-Bit: `make windows-64`
-- Linux: `make linux`
-- Linux 64-bit: `make linux-64`
-
-Alternatively, you can build all the apps at once by calling `make apps`
-
-### <a name="testing"></a> Testing
-
-Tests are broken between two layers. All ES6 Modules/JS code should be tested using `Jest`. Alternatively, any testing for AngularJS content should be done using Karma/Jasmine. For more details on this, refer to the [FAQ](#faq) about Where to write tests.
-
-### <a name="faq"></a> FAQ:
-
-1. **Where can I write my tests?**
-
-    All the ES6/Module tests are written in Jest. You can refer to the ```__tests__``` folder for that. All test files for Jest should match against this file extension pattern ```*.jest.js```. Alternatively, all AngularJS tests should be written using the following file extension pattern ```*.spec.js```. These tests should be written within the b`__tests__/app/` folder.
+MIT
+[license](https://github.com/Soundnode/soundnode-app/blob/master/LICENSE.md).
