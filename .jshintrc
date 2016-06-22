@@ -9,6 +9,7 @@
 	"maxdepth": 3,
 	"nonew": true,
 	"strict": true,
+	
 	"undef": true,
 	"unused": true,
 	"esnext": true,
