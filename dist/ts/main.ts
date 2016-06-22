@@ -1,7 +1,9 @@
-import {component} from 'angular2/core';
-@component({
-	selector:'sync',
-	'template':'<hello></hello>'
-});
+///<reference path="../../node_modules/angular2/typings/browser.d.ts"/>
 
-export class appCompoment{};
+import { bootstrap }    from '@angular/platform-browser-dynamic';
+import { Component } from '@angular/core';
+@Component({
+  selector: 'my-app',
+  template: '<h1>Checking to see if it works</h1>'
+})
+export class AppComponent { }
