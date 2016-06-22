@@ -5,10 +5,8 @@ let y = 2;
 
 class SampleApp {
   constructor() {
-    console.log('Hello World');
+    console.log('I am here man');
   }
 }
-
-console.log(x + y);
 
 let sampleTest = new SampleApp();

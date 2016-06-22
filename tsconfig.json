@@ -3,7 +3,7 @@
     "target": "es5",
     "module": "system",
     "moduleResolution": "node",
-    "outDir": "app/js",
+    "outDir": "dist/js",
     "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
