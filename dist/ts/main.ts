@@ -4,6 +4,6 @@ import { bootstrap }    from '@angular/platform-browser-dynamic';
 import { Component } from '@angular/core';
 @Component({
   selector: 'my-app',
-  template: '<h1>Checking to see if it works</h1>'
+  template: '<h1>Yeah it works man</h1>'
 })
 export class AppComponent { }
