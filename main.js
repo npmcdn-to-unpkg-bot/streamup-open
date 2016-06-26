@@ -33,12 +33,20 @@ app.on('window-all-closed', function() {
 });
 
 app.on('ready', function() {
-  
-  shell.mkdir('-p','/home/richard/Desktop','/home/richard/Desktop/Me');
-  
+
+  // shell.mkdir('-p','/home/$USER/Desktop','/home/echo $USER/Desktop/Me');
+
+	// var child = shell.exec('cd bash && ./dir.sh', {async:true});
+	// shell.echo(child);
+  if (shell.exec('git commit -am "Auto-commit"').code !== 0) {
+  shell.echo('Error: Git commit failed');
+  exit(1);
+}
+
+
   //get os home path and create folder there with the permission read,write
 
-  
+
   // mainWindow = new BrowserWindow({width: 600, height: 600});
   // mainWindow.loadUrl(path.join('file://', __dirname, options.views_dir, options.root_view));
   // if(options.debug) { mainWindow.openDevTools(); }
