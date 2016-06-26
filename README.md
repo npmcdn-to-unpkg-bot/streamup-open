@@ -30,6 +30,13 @@ And much more!
 - You will have a typical reason to be the First beating of dropBox
 - 1000+ daily users
 - 100 + downloads
+# How to Install
+Make sure that you are using node 4.2.4 and run this commands
+you can manage node version by following [![Link](http://www.liquidweb.com/kb/how-to-install-nvm-node-version-manager-for-node-js-on-ubuntu-12-04-lts/)]
+``./scripts/load_globals.sh``
+``sudo npm install --python=python2.7``
+``sudo npm install``
+``sudo npm start``
 
 ## How to contribute
 

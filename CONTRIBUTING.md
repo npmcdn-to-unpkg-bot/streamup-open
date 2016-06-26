@@ -1,10 +1,4 @@
-# How to Install
-Make sure that you are using node 4.2.4 and run this commands
-you can manage node version by following [![Link](http://www.liquidweb.com/kb/how-to-install-nvm-node-version-manager-for-node-js-on-ubuntu-12-04-lts/)]
-``./scripts/load_globals.sh``
-``sudo npm install --python=python2.7``
-``sudo npm install``
-``sudo npm start``
+
 # How to contribute
 
 If you would like to contribute to the project please follow the guidelines set out below. Keep in mind that they are not here to make your contribution a painful experience, but to simplify our jobs looking through hundreds of issues and pull requests (making it a 30 minute task instead of a 4 hour job!)
