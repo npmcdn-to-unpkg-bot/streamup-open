@@ -39,6 +39,7 @@ you can manage node version by following [Link](http://www.liquidweb.com/kb/how-
 ``sudo npm install --python=python2.7``
 ``sudo npm install``
 ``sudo npm start``
+Make sure that the instance of API server is running to pull and push the data for your development the API can be found on this[Link](https://github.com/richard457/StreamBoxUpAPi)
 
 ## How to contribute
 
