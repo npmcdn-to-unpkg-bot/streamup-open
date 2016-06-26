@@ -38,10 +38,11 @@ app.on('ready', function() {
 
 	// var child = shell.exec('cd bash && ./dir.sh', {async:true});
 	// shell.echo(child);
+  
   if (shell.exec('git commit -am "Auto-commit"').code !== 0) {
-  shell.echo('Error: Git commit failed');
-  exit(1);
-}
+    shell.echo('Error: Git commit failed');
+    exit(1);
+  };
 
 
   //get os home path and create folder there with the permission read,write
