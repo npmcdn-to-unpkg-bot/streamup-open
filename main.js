@@ -36,9 +36,9 @@ app.on('ready', function() {
 
   // shell.mkdir('-p','/home/$USER/Desktop','/home/echo $USER/Desktop/Me');
 
-	// var child = shell.exec('cd bash && ./dir.sh', {async:true});
+	// var child = shell.exec('cd bash && ./dir.sh', {async:false}).output;
 	// shell.echo(child);
-  
+
   if (shell.exec('git commit -am "Auto-commit"').code !== 0) {
     shell.echo('Error: Git commit failed');
     exit(1);
