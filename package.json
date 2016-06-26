@@ -5,12 +5,10 @@
   "engines": {
     "node": "4.2.x"
   },
-  
   "main": "main.js",
   "scripts": {
     "build": "webpack --progress --profile --colors --display-error-details --display-cached",
-    
-    "start":"gulp && electron .",
+    "start": "gulp && electron .",
     "lite": "lite-server",
     "postinstall": "typings install",
     "debug": "node-inspector && electron --debug=5858 && ",
@@ -18,7 +16,6 @@
     "test-angularjs": "karma start --auto-watch",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    
     "typings": "typings"
   },
   "repository": {
@@ -106,26 +103,26 @@
     "zone.js": "^0.6.12",
     "angular2-in-memory-web-api": "0.0.12",
     "bootstrap": "^3.3.6",
-    "angular2": "2.0.0-beta.17",    
+    "angular2": "2.0.0-beta.17",
     "es6-shim": "^0.35.0",
     "concurrently": "^2.0.0",
     "lite-server": "^2.2.0",
     "typescript": "^1.8.10",
-    "typings":"^1.0.4"
+    "typings": "^1.0.4"
   },
   "jspm": {
     "dependencies": {},
     "devDependencies": {
-      
       "babel": "npm:babel-core@^5.1.13",
       "babel-runtime": "npm:babel-runtime@^5.1.13",
       "core-js": "npm:core-js@^0.9.4"
     }
   },
   "dependencies": {
+    "jquery": "^2.1.4",
+    "shelljs": "^0.7.0",
     "ts-loader": "^0.7.2",
     "typescript": "^1.7.3",
-    "jquery": "^2.1.4",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
   },

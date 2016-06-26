@@ -1,8 +1,9 @@
 'use strict';
 var _ = require('lodash');
-// var remote = require('remote');
+var fs = require('file-system');
 var app = require('app');
 var path = require('path');
+var shell = require('shelljs');
 var BrowserWindow = require('browser-window');
 
 // ####################################################
@@ -13,7 +14,7 @@ require('crash-reporter').start();
 
 var mainWindow = null;
 var options = {
-	"debug": true,
+	"debug": true   ,
 	"version": "1.0.0",
 	"views_dir": "views",
 	"root_view": "index.html"
@@ -32,10 +33,16 @@ app.on('window-all-closed', function() {
 });
 
 app.on('ready', function() {
-  mainWindow = new BrowserWindow({width: 800, height: 600});
-  mainWindow.loadUrl(path.join('file://', __dirname, options.views_dir, options.root_view));
-  if(options.debug) { mainWindow.openDevTools(); }
-  mainWindow.on('closed', function() { mainWindow = null; });
+  
+  shell.mkdir('-p','/home/richard/Desktop','/home/richard/Desktop/Me');
+  
+  //get os home path and create folder there with the permission read,write
+
+  
+  // mainWindow = new BrowserWindow({width: 600, height: 600});
+  // mainWindow.loadUrl(path.join('file://', __dirname, options.views_dir, options.root_view));
+  // if(options.debug) { mainWindow.openDevTools(); }
+  // mainWindow.on('closed', function() { mainWindow = null; });
 });
 
 // ############################################################################################
