@@ -119,6 +119,7 @@
     }
   },
   "dependencies": {
+    "graphQl-Mysql-Server": "^1.0.10",
     "jquery": "^2.1.4",
     "shelljs": "^0.7.0",
     "ts-loader": "^0.7.2",
