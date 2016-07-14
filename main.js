@@ -16,6 +16,7 @@ var server = require('graphQl-Mysql-Server');
 var Schema = require('graphQl-Mysql-Server').Schema;
 const child_process = require('child_process');
 var graphql = require ('graphql').graphql;
+var chokidar= require('chokidar');
 
 // ####################################################
 // ####################################################
@@ -52,32 +53,6 @@ graphql(Schema, query).then( function(result) {
 });
 app.on('ready', function() {
 
-	//load a folder that a user defined to be a web
-  // var user = shell.echo($USER);
-  // child_process.exec('./dir.sh', ['mode=ALL'], {}, function(err, data) {
-  //   // console.log(stdout);
-	// 	shell.echo(err);
-  // });
-  // fs.mkdir('/home/richard/Desktop/Me');
-    // var output = shell.exec("bash ./bash/dir.sh",{silent:true,async:false}).output;
-    // shell.echo('Hello there');
-
-  //get os home path and create folder there with the permission read,write
-
-
-  // mainWindow = new BrowserWindow({width: 600, height: 600});
-  // mainWindow.loadUrl(path.join('file://', __dirname, options.views_dir, options.root_view));
-  // if(options.debug) { mainWindow.openDevTools(); }
-  // mainWindow.on('closed', function() { mainWindow = null; });
-
-// shell.mkdir('-p','/home/Desktop/el');
-	// var child = shell.exec('./dir.sh', {async:false}).output;
-	// shell.echo(child);
-
-  // if (shell.exec('git commit -am "Auto-commit"').code !== 0) {
-  //   shell.echo('Error: Git commit failed');
-  //   exit(1);
-  // };
 	var mkdirp = require('mkdirp');
 	var user=shell.exec('./dir.sh',{async:false}).output;
 	mkdirp ('user', function(err) {
@@ -86,10 +61,39 @@ app.on('ready', function() {
 
 });
 // Watch the /home/working directory
-// fs.watch("/home/pro", { persistent: true }, function (event, fileName) {
-//   console.log("Event: " + event);
-//   console.log(fileName + "\n");
+fs.watch("/home/bright", { persistent: true }, function (event, fileName) {
+  console.log("Event: " + event);
+  console.log(fileName + "\n");
+});
+
+
+
+
+
+
+// var watcher = chokidar.watch('file or dir', {ignored: /[\/\\]\./, persistent: true});
+
+// watcher
+//   .on('add', function(path) {
+//     console.log('File', 'has been added');
+//   })
+//   .on('addDir', function(path) {
+//     console.log('Directory', 'has been added');
+//   })
+// // 'add', 'addDir' and 'change' events also receive stat() results as second argument.
+// // http://nodejs.org/api/fs.html#fs_class_fs_stats
+
+// watcher.add('new-file');
+// watcher.add(['new-file-2', 'new-file-3']);
+
+// // Only needed if watching is persistent.
+// watcher.close();
+
+// // One-liner
+// require('chokidar').watch('.', {ignored: /[\/\\]\./}).on('all', function(event, path) {
+//   console.log(event, path);
 // });
+
 
 // var watcher = chokidar.watch(', /,', {
 //   ignored: /[\/\\]\./, persistent: true
