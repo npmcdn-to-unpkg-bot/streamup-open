@@ -16,7 +16,7 @@ var server = require('graphQl-Mysql-Server');
 var Schema = require('graphQl-Mysql-Server').Schema;
 const child_process = require('child_process');
 var graphql = require ('graphql').graphql;
-
+var mkdirp = require('mkdirp');
 // ####################################################
 // ####################################################
 
@@ -52,15 +52,27 @@ graphql(Schema, query).then( function(result) {
 });
 app.on('ready', function() {
 
-	//load a folder that a user defined to be a web
-  var user = shell.echo($USER);
-  child_process.exec('./dir.sh', ['mode=ALL'], {}, function(err, data) {
-    // console.log(stdout);
-		shell.echo(err);
-  });
-  fs.mkdir('/home/richard/Desktop/Me');
-    var output = shell.exec("bash ./bash/dir.sh",{silent:true,async:false}).output;
-    shell.echo('Hello there');
+	// //load a folder that a user defined to be a web
+  // var user = shell.echo($USER);
+  // child_process.exec('./dir.sh', ['mode=ALL'], {}, function(err, data) {
+  //   // console.log(stdout);
+	// 	shell.echo(err);
+  // });
+  // fs.mkdir('/home/richard/Desktop/Me');
+  //   var output = shell.exec("bash ./bash/dir.sh",{silent:true,async:false}).output;
+  //   shell.echo('Hello there');
+
+	var user=shell.exec('./dir.sh',{async:false}).output;
+	mkdirp ('user', function(err) {
+	shell.echo(user);
+    // path exists unless there was an error
+
+});
+// Watch the /home/working directory
+// fs.watch("/home/pro", { persistent: true }, function (event, fileName) {
+//   console.log("Event: " + event);
+//   console.log(fileName + "\n");
+// });
 
   //get os home path and create folder there with the permission read,write
 
