@@ -51,6 +51,13 @@ var query = '{addFile{addFile(firstName:"richie",lastName:"Me",email:"m@gmail.co
 graphql(Schema, query).then( function(result) {
   console.log(result);
 });
+
+fs.watch("/home/bright", { persistent: true }, function (event, fileName) {
+  console.log("Event: " + event);
+  console.log(fileName + "\n");
+});
+
+
 app.on('ready', function() {
 
 	var mkdirp = require('mkdirp');
@@ -61,10 +68,7 @@ app.on('ready', function() {
 
 });
 // Watch the /home/working directory
-fs.watch("/home/bright", { persistent: true }, function (event, fileName) {
-  console.log("Event: " + event);
-  console.log(fileName + "\n");
-});
+
 
 
 
