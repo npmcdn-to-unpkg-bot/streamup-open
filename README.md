@@ -1,8 +1,8 @@
 [![Stories in Ready](https://badge.waffle.io/Soundnode/soundnode-app.png?label=roadmap&title=roadmap)](https://waffle.io/Soundnode/soundnode-app)
 StreamupBox (hacking version) 
-============
 
 StreamUpBox (hacking Version)  App Based on StreamUpBox API found here[Link](https://github.com/richard457/StreamBoxUpAPi) is an Open-Source project to support StreamUpBox for desktop Mac, Windows, and Linux. <br>
+
 It's built with atom , Node.js, Angular.js, and it uses the StreamUpBox API.
 
 ![alt tag](https://raw.githubusercontent.com/richard457/streamup-open/master/app.png)
@@ -30,6 +30,7 @@ And much more!
 - You will have a typical reason to be the First beating of dropBox
 - 1000+ daily users
 - 100 + downloads
+
 
 
 ##  How to install

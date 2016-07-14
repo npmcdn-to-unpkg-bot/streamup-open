@@ -1,0 +1,52 @@
+<style>
+.md-button {
+  text-transform: lowercase; !important;/*For Lower case use lowercase*/
+}
+ md-toolbar.md-default-theme {
+    background-color: #ccc;
+    color: #fff;
+}
+
+</style>
+
+
+<md-dialog aria-label="Login" ng-cloak style="min-width:800px;margin-top:25px;">
+
+    <form name="shareForm">
+
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2 style="color:white">Share</h2>
+                <span flex></span>
+                <md-button type="button" class="md-icon-button" ng-click="cancel(); $event.stopPropagation();">
+                    <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content ng-controller="shareController">
+            <span  flex>{{getFile()}}</span>
+            <div class="md-dialog-content">
+                <md-input-container class="md-block">
+                    <label>emails:</label>
+                    <input  data-role="tagsinput"  ng-model="vm.emails" required>
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>comment:)optional</label>
+                    <input ng-model="vm.comment" type="text" required>
+                </md-input-container>
+                <input type="hidden" ng-init="vm.file=getFile()" ng-model="vm.file">
+                <input type="hidden" ng-init="vm.option='user'" ng-model="vm.option">
+            </div>
+            <md-button ng-controller="shareController" aria-label="none"  class="btn btn md-primary md-raised" ng-click="shareFile(vm)" flex="40"  flex-gt-md="auto">
+              <span class="fa fa-share-alt"></span>
+            </md-button>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <span flex></span>
+        </md-dialog-actions>
+
+    </form>
+</md-dialog>
