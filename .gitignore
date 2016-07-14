@@ -1,6 +1,16 @@
+
 /vendor
 /node_modules
 Homestead.yaml
 Homestead.json
 .env
 /bower_resources
+
+build/
+coverage/
+karma-coverage/
+npm-debug.log
+node_modules/
+jspm_packages/
+dist/vendor/
+

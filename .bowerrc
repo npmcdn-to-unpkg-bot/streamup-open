@@ -1,3 +1,6 @@
 {
-  "directory": "public/bower_resources"
+
+  "directory": "client/bower_components"
 }
+
+

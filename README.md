@@ -1,8 +1,8 @@
 [![Stories in Ready](https://badge.waffle.io/Soundnode/soundnode-app.png?label=roadmap&title=roadmap)](https://waffle.io/Soundnode/soundnode-app)
 StreamupBox (hacking version) 
-============
 
-StreamUpBox (hacking Version)  App Based on StreamUpBox API is an Open-Source project to support StreamUpBox for desktop Mac, Windows, and Linux. <br>
+StreamUpBox (hacking Version)  App Based on StreamUpBox API found here[Link](https://github.com/richard457/StreamBoxUpAPi) is an Open-Source project to support StreamUpBox for desktop Mac, Windows, and Linux. <br>
+
 It's built with atom , Node.js, Angular.js, and it uses the StreamUpBox API.
 
 ![alt tag](https://raw.githubusercontent.com/richard457/streamup-open/master/app.png)
@@ -30,6 +30,17 @@ And much more!
 - You will have a typical reason to be the First beating of dropBox
 - 1000+ daily users
 - 100 + downloads
+
+
+
+##  How to install
+Make sure that you are using node 4.2.4 and run this commands
+you can manage node version by following [Link](http://www.liquidweb.com/kb/how-to-install-nvm-node-version-manager-for-node-js-on-ubuntu-12-04-lts/)
+``./scripts/load_globals.sh``
+``sudo npm install --python=python2.7``
+``sudo npm install``
+``sudo npm start``
+Make sure that the instance of API server is running to pull and push the data for your development the API can be found on this[Link](https://github.com/richard457/StreamBoxUpAPi)
 
 ## How to contribute
 
