@@ -1,0 +1,187 @@
+@import url(../bower_resources/bootstrap/dist/css/bootstrap.min.css);
+@import url(flaticon.css);
+@import url(../bower_resources/font-awesome/css/font-awesome.min.css);
+@import url(notification.css);
+@import url(ionic.css);
+@import url(toastr.min.css);
+@import url(float.css);
+@import url(general.css);
+/*@import "https://fonts.googleapis.com/css?family=Montserrat:300,400,700";*/
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  /*src: local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v6/zhcz-_WihjSQC0oHJ9TCYPk_vArhqVIZ0nv9q090hN8.woff2) format('woff2');*/
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  /*src: local('Montserrat-Bold'), url(https://fonts.gstatic.com/s/montserrat/v6/IQHow_FEYlDC4Gzy_m8fcoWiMMZ7xLd792ULpGE4W_Y.woff2) format('woff2');*/
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/Montserrat-Bold.ttf') format('truetype');
+  src: url('../fonts/Montserrat-Regular.ttf') format('truetype');
+
+}
+.rwd-table {
+margin: 1em 0;
+min-width: 850px;
+/*min-width: 700px;*/
+}
+.rwd-table tr {
+/*border-top: 1px solid #ddd;*/
+
+border-bottom: 1px solid #ddd;
+}
+.rwd-table th {
+display: none;
+}
+.rwd-table td {
+display: block;
+}
+.rwd-table td:first-child {
+padding-top: .5em;
+}
+.rwd-table td:last-child {
+padding-bottom: .5em;
+}
+.rwd-table td:before {
+content: attr(data-th) ": ";
+font-weight: bold;
+width: 6.5em;
+display: inline-block;
+}
+@media (min-width: 480px) {
+.rwd-table td:before {
+  display: none;
+}
+}
+.rwd-table th, .rwd-table td {
+text-align: left;
+}
+@media (min-width: 480px) {
+.rwd-table th, .rwd-table td {
+  display: table-cell;
+  padding: .25em .5em;
+}
+.rwd-table th:first-child, .rwd-table td:first-child {
+  padding-left: 0;
+}
+.rwd-table th:last-child, .rwd-table td:last-child {
+  padding-right: 0;
+}
+}
+
+
+
+h1 {
+font-weight: normal;
+letter-spacing: -1px;
+color: #34495E;
+}
+
+.rwd-table {
+/*background: #34495E;*/
+background: #ffffff;
+color: black;
+border-radius: .0px;
+overflow: hidden;
+}
+.rwd-table tr {
+border-color: #ccc;
+}
+.rwd-table th, .rwd-table td {
+margin: .5em 1em;
+}
+@media (min-width: 480px) {
+.rwd-table th, .rwd-table td {
+  padding: 1em !important;
+}
+}
+.rwd-table th, .rwd-table td:before {
+color: #95a5a6;
+}
+.box{
+
+}
+.container {
+  width: 100%;
+  background: #fff;
+  padding: 0px; }
+
+.img-post {
+  width: 60px;
+  float: left;
+  margin-right: 12px; }
+
+.form-control {
+  width: 50%; }
+
+.posting-form {
+  width: 60%; }
+
+.item {
+  margin: 10px auto; }
+
+.button.button-positive {
+  width: 100px;
+  background-color: #fff;
+  color: #387ef5; }
+
+.button.button-positive:hover {
+  background: #387ef5; }
+
+
+.inner-content {
+  margin-top: 5px; }
+  /*for customizing file input*/
+  div.browse-wrap {
+top:0;
+left:0;
+margin:20px;
+cursor:pointer;
+overflow:hidden;
+padding:20px 60px;
+text-align:center;
+position:relative;
+background-color:#f6f7f8;
+border:solid 1px #d2d2d7;}
+div.title {
+color:#34495e;
+font-size:14px;
+font-weight:bold;
+font-family:tahoma, arial, sans-serif;}
+input.upload {
+right:0;
+margin:0;
+bottom:0;
+padding:0;
+opacity:0;
+height:300px;
+outline:none;
+cursor:inherit;
+position:absolute;
+font-size:1000px !important;}
+span.upload-path {
+text-align: center;
+margin:20px;
+display:block;
+font-size: 80%;
+color:#3b5998;
+font-weight:bold;
+font-family:tahoma, arial, sans-serif;
+}
+/*md toolbar my custom*/
+.md-toolbar + .md-tabs {
+   border-top-left-radius: 0;
+   border-top-right-radius: 0;
+
+ }
+
+/*# sourceMappingURL=app.css.map */
