@@ -8,7 +8,7 @@ var app=require ('app');
 var path = require('path');
 var shell = require('shelljs');
 var BrowserWindow = require('browser-window');
-
+const notifier = require('node-notifier');
 // var server = require('graphQl-Mysql-Server');
 // var Schema = require('graphQl-Mysql-Server').Schema;
 // const app=require('electron');
@@ -19,35 +19,7 @@ var chokidar= require('chokidar');
 var filessystem = require('fs');
 
     	
-	var dir = '/home/StreamUpBox';
-    if (!filessystem.existsSync(dir)){
-        filessystem.mkdirSync(dir);
-		console.log("Folder created Successfully!");
-    }
-	else
-    {
-        console.log("Folder already exist!");
-    }
-
-
-require('crash-reporter').start();
-fs.watch("/home/StreamUpBox", { persistent: true }, function (event, fileName) {
-      console.log("Event: " + event);
-      console.log(fileName + "\n");
-});
-
-// var child = shell.exec('./dir.sh', {async:false}).output;
-// 	shell.echo(child);
-
-fs.readdir(dir, function(err, items) {
-    console.log(items);
-    // for (var i=0; i<items.length; i++) {
-    //     console.log("Number of folders and files" + " " +items[i]);
-		
-    // }
-	console.log("NUmber of items:"+items.length);
-});
-
+	
 
 // function sortDirectory(path, files, callback, i, dir) {
 //     if (!i) {i = 0;}                                            //Init
@@ -94,7 +66,62 @@ var mainWindow = null;
 // });
 
 
-// app.on('ready', function() {
+app.on('ready', function() {
+
+
+var dir = '/home/StreamUpBox';
+    if (!filessystem.existsSync(dir)){
+        filessystem.mkdirSync(dir);
+		console.log("Folder created Successfully!");
+    }
+	else
+    {
+        console.log("Folder already exist!");
+    }
+
+var notify;
+require('crash-reporter').start();
+fs.watch("/home/StreamUpBox", { persistent: true }, function (event, fileName) {
+      console.log("Event: " + event);
+      console.log(fileName + "\n");
+});
+
+// var child = shell.exec('./dir.sh', {async:false}).output;
+// 	shell.echo(child);
+
+fs.readdir(dir, function(err, items) {
+    console.log(items);
+    // for (var i=0; i<items.length; i++) {
+    //     console.log("Number of folders and files" + " " +items[i]);
+		
+    // }
+	console.log("NUmber of items:"+items.length);
+    // notify =  items.length;
+    notifier.notify({
+        title: 'My awesome title',
+        message: items.length,
+        icon: path.join(__dirname, 'coulson.jpg'), // Absolute path (doesn't work on balloons) 
+        sound: true, // Only Notification Center or Windows Toasters 
+        wait: true // Wait with callback, until user action is taken against notification 
+        }, function (err, response) {
+        // Response is response from notification 
+        });
+
+        notifier.on('timeout', function (notifierObject, options) {
+        // Triggers if `wait: true` and notification closes 
+        });
+});
+
+
+
+
+
+
+ 
+// notifier.on('click', function (notifierObject, options) {
+//   // Triggers if `wait: true` and user clicks notification 
+// });
+ 
 
 
 //        // Create the browser window and disable integration with node
@@ -122,5 +149,5 @@ var mainWindow = null;
 
    
 
-// });
+});
 
