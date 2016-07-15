@@ -1,47 +1,32 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <title></title>
-    <!-- bower:css -->
-    <link rel="stylesheet" href="../client/bower_components/skeleton/css/skeleton.css" />
-    <!-- endbower -->
-    <!-- CUSTOM CSS -->
-    <link rel="stylesheet" href="../dist/css/style.css">
+    <title>Angular 2 QuickStart JS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
 
-     <script src="../jspm_packages/system.js"></script>
-    <script src="../config.js"></script>
-    <!-- bower:js -->
-    <script src="../client/bower_components/angular/angular.js"></script>
-    <script src="../client/bower_components/angular-mocks/angular-mocks.js"></script>
-    <script src="../client/bower_components/jquery/dist/jquery.js"></script>
-    <!-- endbower -->
-    <!--<script src="../dist/app/home/home.js"></script>
-    <script src="../dist/js/sample.js"></script>-->
+    <!-- 1. Load libraries -->
+    <!-- IE required polyfill -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
 
-    <script src="../node_modules/es6-shim/es6-shim.min.js"></script>
-    <script src="../node_modules/systemjs/dist/system-polyfills.js"></script>
-    <script src="../node_modules/angular2/es6/dev/src/testing/shims_for_IE.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
 
-    <!--<script src="../node_modules/angular2/bundles/angular2-polyfills.js"></script>-->
-    <script src="../node_modules/systemjs/dist/system.src.js"></script>
-    <script src="../node_modules/rxjs/bundles/Rx.js"></script>
-    <script src="../node_modules/angular2/bundles/angular2.dev.js"></script>
-    <script src="../dist/ts/main.js"></script>
-    <script>
-        System.config({
-            packages: {
-                app: {
-                    format: 'register',
-                    defaultExtension: 'js'
-                }
-            }
-        });
-        System.import('dist/ts/main').then(null, console.error.bind(console));
-    </script>
+    <script src="node_modules/rxjs/bundles/Rx.umd.js"></script>
+    <script src="node_modules/@angular/core/bundles/core.umd.js"></script>
+    <script src="node_modules/@angular/common/bundles/common.umd.js"></script>
+    <script src="node_modules/@angular/compiler/bundles/compiler.umd.js"></script>
+    <script src="node_modules/@angular/platform-browser/bundles/platform-browser.umd.js"></script>
+    <script src="node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js"></script>
+
+    <!-- 2. Load our 'modules' -->
+    <script src='../dist/ts/app.component.js'></script>
+    <script src='../dist/js/main.js'></script>
+
+  </head>
+
+  <!-- 3. Display the application -->
   <body>
-
-      <StreamUpBox>Loading...</StreamUpBox>
-
+    <StreamUpBox>Loading...</StreamUpBox>
   </body>
 
 </html>

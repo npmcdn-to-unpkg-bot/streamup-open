@@ -17,19 +17,29 @@ var filessystem = require('fs');
 
 
 var mainWindow = null;
+var options = {
+	"debug": true,
+	"version": "1.0.0",
+	"views_dir": "views",
+	"root_view": "index.html"
+};
+
+options = _.extend({
+	// ADDITIONAL CUSTOM SETTINGS
+}, options);
 
 
 require('crash-reporter').start();
 
 
 app.on('ready', function() {
-var options ={
-    with:800,
-    height:600,
-    debug:true
-};
-var mainWindow = new BrowserWindow(options);
-mainWindow.loadUrl('file://'+ __dirname + '/views/index.html');
+
+
+mainWindow = new BrowserWindow({width: 800, height: 600});
+  mainWindow.loadUrl(path.join('file://', __dirname, options.views_dir, options.root_view));
+  if(options.debug) { mainWindow.openDevTools(); }
+  mainWindow.on('closed', function() { mainWindow = null; });
+
 var folderWatcher = function(object) {
         fs.readdir(dir, function(err, items) {
         // console.log(items);
