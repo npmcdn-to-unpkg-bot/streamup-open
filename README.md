@@ -53,8 +53,11 @@ Please follow the [contribution guidelines](https://github.com/richard457/stream
 
 ## Development
 
-We use [Waffle.io](https://waffle.io/) as our project management tool, you can check what's going on here: [StreamUpBox App status](https://waffle.io/richard457/streamup-open)
+We use [Waffle.io](https://waffle.io/richard457/streamup-open) as our project management tool, you can check what's going on here: [StreamUpBox App status](https://waffle.io/richard457/streamup-open)
 
+
+## see our working graph
+[![Throughput Graph](https://graphs.waffle.io/richard457/streamup-open/throughput.svg)](https://waffle.io/richard457/streamup-open/metrics/throughput)
 
 
 atom don't support mp3 and h264 in video and audio tag by default because of patented media formats.
