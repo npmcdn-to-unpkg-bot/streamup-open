@@ -131,6 +131,7 @@
     "mysql": "~2.0.0-alpha9",
     "node-parse-api": "^0.3.8",
     "parse": "^1.8.3",
+    "recursive-readdir": "^2.0.0",
     "shelljs": "^0.7.0",
     "socket.io": "~0.9.16",
     "ts-loader": "^0.7.2",

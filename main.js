@@ -4,14 +4,14 @@
 'use strict';
 var _ = require('lodash');
 var fs = require('file-system');
-var app = require('app');
+var app=require ('app');
 var path = require('path');
 var shell = require('shelljs');
 var BrowserWindow = require('browser-window');
 
 // var server = require('graphQl-Mysql-Server');
 // var Schema = require('graphQl-Mysql-Server').Schema;
-
+// const app=require('electron');
 const child_process = require('child_process');
 var graphql = require ('graphql').graphql;
 var chokidar= require('chokidar');
@@ -23,7 +23,8 @@ var filessystem = require('fs');
     if (!filessystem.existsSync(dir)){
         filessystem.mkdirSync(dir);
 		console.log("Folder created Successfully!");
-    }else
+    }
+	else
     {
         console.log("Folder already exist!");
     }
@@ -35,11 +36,46 @@ fs.watch("/home/StreamUpBox", { persistent: true }, function (event, fileName) {
       console.log(fileName + "\n");
 });
 
-// 	var dir=shell.exec('./dir.sh',{async:false}).output;
-// 	mkdirp ('dir', function(err) {
-// 	shell.echo(dir);
-	
+// var child = shell.exec('./dir.sh', {async:false}).output;
+// 	shell.echo(child);
+
+fs.readdir(dir, function(err, items) {
+    console.log(items);
+
+    for (var i=0; i<items.length; i++) {
+        console.log("Number of folders and files" + " " +items[i]);
+		
+    }
+	console.log("NUmber of items:"+items.length);
+});
+
+
+// function sortDirectory(path, files, callback, i, dir) {
+//     if (!i) {i = 0;}                                            //Init
+//     if (!dir) {dir = [];}
+//     if(i < files.length) {                                      //For all files
+//         fs.lstat(path + '/home/StreamUpBox' + files[i], function (err, stat) { //Get stats of the file
+//             if(err) {
+//                 console.log(err);
+//             }
+//             if(stat.isDirectory()) {                            //Check if directory
+//                 dir.push(files[i]);                             //If so, ad it to the list
+//             }
+//             sortDirectory(callback, i + 1, dir);                //Iterate
+//         });
+//     } else {
+//         callback(dir);                                          //Once all files have been tested, return
+//     }
+// }
+// listDirectory('C/home/StreamUpBox', function (dir) {
+// console.log("Number of Directories and files in the folder are "+ dir);
 // });
+
+
+
+
+
+
 var mainWindow = null;
 // var options = {
 // 	"debug": true   ,
