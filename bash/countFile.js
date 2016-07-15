@@ -1,12 +1,4 @@
-  #!/bin/bash
-
-  # if [ ! -d /home/StreamUpBox ]; then
-  #   mkdir -m 777  -p /home/StreamUpBox;
-  #   echo "Folder created with success!";
-  # else
-  #   echo "Folder already exists";
-  # fi;
-  var sh = require('shelljs');
+var sh = require('shelljs');
 var count = 0;
 function annotateFolder (folderPath) {
   sh.cd(/home/StreamUpBox);
