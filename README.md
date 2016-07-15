@@ -1,7 +1,7 @@
 [![Stories in Ready](https://badge.waffle.io/Soundnode/soundnode-app.png?label=roadmap&title=roadmap)](https://waffle.io/Soundnode/soundnode-app)
-StreamupBox (hacking version) 
+StreamupBoxDeskTopApp (hacking version) 
 
-StreamUpBox (hacking Version)  App Based on StreamUpBox API found here[Link](https://github.com/richard457/StreamBoxUpAPi) is an Open-Source project to support StreamUpBox for desktop Mac, Windows, and Linux. <br>
+StreamupBoxDeskTopApp (hacking Version)  App Based on StreamUpBox API found here[Link](https://github.com/richard457/StreamBoxUpAPi) is an Open-Source project to support StreamUpBox for desktop Mac, Windows, and Linux. <br>
 
 It's built with atom , Node.js, Angular.js, and it uses the StreamUpBox API.
 
@@ -16,9 +16,9 @@ It's built with atom , Node.js, Angular.js, and it uses the StreamUpBox API.
 - Easy navigation
 - List any files of any type
 - Share any File to anyone
-- Protect your Files by password on Share
+- Protect your Files by password on Share and add Expiration date
 - Fun with Listening to songs from your box, Likes, Tracks, Following or Playlists
-- Like songs and save to your liked playlist
+- Like songs or Any Audio and save to your liked playlist
 - Full playlist feature
 - Follow/Unfollow users
 
@@ -27,9 +27,8 @@ And much more!
 ## Reasons to contribute
 
 - You will learn new things
-- You will have a typical reason to be the First beating of dropBox
-- 1000+ daily users
-- 100 + downloads
+- You will have a typical reason to be the First to  beat dropBox
+
 
 
 
@@ -41,7 +40,7 @@ you can manage node version by following [Link](http://www.liquidweb.com/kb/how-
 ``sudo npm install``
 ``sudo npm start``
 Make sure that the instance of API server is running to pull and push the data for your development the API can be found on this[Link](https://github.com/richard457/StreamBoxUpAPi)
-
+A testing key for our server can be requested by anyone who is contributing to this app.
 ## How to contribute
 
 First, building, testing, and reporting bugs is highly appreciated. Please include console's output and steps to reproduce the problem in your bug report if possible.
@@ -78,7 +77,7 @@ See the [Development page](https://github.com/richard457/streamup-open/wiki/Deve
 
 ## Contributors
 
-Thanks to the friends from [Youthoughts](http://Youthoughts.com/) for a lot help provided.
+Thanks to the friends from [Youthoughts](http://Youthoughts.com/) for a lot help provided and encouragement.
 
 and Thanks to all [contributors](https://github.com/richard457/streamup-open/graphs/contributors) that are helping or helped to make StreamUpBox better.
 

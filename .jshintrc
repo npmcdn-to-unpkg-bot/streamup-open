@@ -15,7 +15,6 @@
 	"esnext": true,
 	"loopfunc": true,
 	"browser": true,
-	"devel": true,
 	"jasmine": true,
 	"jquery": true,
 	"mocha": true,
