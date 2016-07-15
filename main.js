@@ -69,7 +69,7 @@ fs.readdir(dir, function(err, items) {
     //     console.log("Number of folders and files" + " " +items[i]);
 		
     // }
-	console.log("NUmber of items:"+items.length);
+	console.log("Number of items:"+items.length);
     // notify =  items.length;
     notifier.notify({
         title: 'In my Directory I have:',
@@ -90,7 +90,7 @@ fs.readdir(dir, function(err, items) {
     {
     notifier.notify({
         title: 'Folder Modifications',
-        message: 'You add some Items',
+        message: 'You have added some Items',
         icon: path.join(__dirname, 'coulson.jpg'), // Absolute path (doesn't work on balloons) 
         sound: true, // Only Notification Center or Windows Toasters 
         wait: true // Wait with callback, until user action is taken against notification 
@@ -103,11 +103,11 @@ fs.readdir(dir, function(err, items) {
         }); 
     }
 
-       app.get('/files/:file(*)', function(req, res, next){
-  var file = req.params.file, 
-  path = dir;
-  res.download(files);
-}); 
+//        app.get('/files/:file(*)', function(req, res, next){
+//   var file = req.params.file, 
+//   path = dir;
+//   res.download(files);
+// }); 
 });
 
 
