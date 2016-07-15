@@ -41,11 +41,10 @@ fs.watch("/home/StreamUpBox", { persistent: true }, function (event, fileName) {
 
 fs.readdir(dir, function(err, items) {
     console.log(items);
-
-    for (var i=0; i<items.length; i++) {
-        console.log("Number of folders and files" + " " +items[i]);
+    // for (var i=0; i<items.length; i++) {
+    //     console.log("Number of folders and files" + " " +items[i]);
 		
-    }
+    // }
 	console.log("NUmber of items:"+items.length);
 });
 
