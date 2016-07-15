@@ -68,7 +68,7 @@ var mainWindow = null;
 
 app.on('ready', function() {
 
-
+//Creating the Directory and watching it.
 var dir = '/home/StreamUpBox';
     if (!filessystem.existsSync(dir)){
         filessystem.mkdirSync(dir);
@@ -89,6 +89,8 @@ fs.watch("/home/StreamUpBox", { persistent: true }, function (event, fileName) {
 // var child = shell.exec('./dir.sh', {async:false}).output;
 // 	shell.echo(child);
 
+
+//Reading Notification done in my directory
 fs.readdir(dir, function(err, items) {
     console.log(items);
     // for (var i=0; i<items.length; i++) {
@@ -126,8 +128,7 @@ fs.readdir(dir, function(err, items) {
 
         notifier.on('timeout', function (notifierObject, options) {
         // Triggers if `wait: true` and notification closes 
-        });
-        
+        }); 
     }
 
         
