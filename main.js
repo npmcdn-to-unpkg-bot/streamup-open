@@ -38,92 +38,49 @@ var mainWindow = null;
 // });
 
 
-app.on('ready', function() {
-
-//Creating the Directory and watching it.
-var dir = '/home/StreamUpBox';
-    if (!filessystem.existsSync(dir)){
-        filessystem.mkdirSync(dir);
-		console.log("Folder created Successfully!");
-    }
-	else
-    {
-        console.log("Folder already exist!");
-    }
-
-var notify;
 require('crash-reporter').start();
-fs.watch("/home/StreamUpBox", { persistent: true }, function (event, fileName) {
-      console.log("Event: " + event);
-      console.log(fileName + "\n");
-});
-
-// var child = shell.exec('./dir.sh', {async:false}).output;
-// 	shell.echo(child);
 
 
-//Reading Notification done in my directory
-fs.readdir(dir, function(err, items) {
-    console.log(items);
-    // for (var i=0; i<items.length; i++) {
-    //     console.log("Number of folders and files" + " " +items[i]);
-		
-    // }
-	console.log("Number of items:"+items.length);
-    // notify =  items.length;
-    notifier.notify({
-        title: 'In my Directory I have:',
-        message: items.length+ " Items!",
-        icon: path.join(__dirname, 'coulson.jpg'), // Absolute path (doesn't work on balloons) 
-        sound: true, // Only Notification Center or Windows Toasters 
-        wait: true // Wait with callback, until user action is taken against notification 
-        }, function (err, response) {
-        // Response is response from notification 
-        });
-
-        notifier.on('timeout', function (notifierObject, options) {
-        // Triggers if `wait: true` and notification closes 
-        });
-
+app.on('ready', function() {
+var folderWatcher = function(object) {
+        fs.readdir(dir, function(err, items) {
+        // console.log(items);
         var count=items.length;
-    if(count=count+1)
-    {
-    notifier.notify({
-        title: 'Folder Modifications',
-        message: 'You have added some Items',
-        icon: path.join(__dirname, 'coulson.jpg'), // Absolute path (doesn't work on balloons) 
-        sound: true, // Only Notification Center or Windows Toasters 
-        wait: true // Wait with callback, until user action is taken against notification 
-        }, function (err, response) {
-        // Response is response from notification 
-        });
+        if(count=count+1)
+        {
+        notifier.notify({
+            title: items.length+ 'Files by now!',
+            message: 'You have added some Items',
+            icon: path.join(__dirname, 'coulson.jpg'), // Absolute path (doesn't work on balloons) 
+            sound: true, // Only Notification Center or Windows Toasters 
+            wait: true // Wait with callback, until user action is taken against notification 
+            }, function (err, response) {
+            // Response is response from notification 
+            });
 
-        notifier.on('timeout', function (notifierObject, options) {
-        // Triggers if `wait: true` and notification closes 
-        }); 
-    }
+            notifier.on('timeout', function (notifierObject, options) {
+            // Triggers if `wait: true` and notification closes 
+            }); 
+        }
 
-//        app.get('/files/:file(*)', function(req, res, next){
-//   var file = req.params.file, 
-//   path = dir;
-//   res.download(files);
-// }); 
+
+    });
+};
+fs.watch("/home/StreamUpBox", { persistent: true }, function (event, fileName) {
+      folderWatcher();
 });
-
-
-
-
-
-
-
+//Creating the Directory and watch it.
+var dir = '/home/StreamUpBox';
+if (!filessystem.existsSync(dir)){
+    filessystem.mkdirSync(dir);
+    console.log("Folder created Successfully!");
+}
+else
+{
+    console.log("Folder already exist!");
+}
 
  
-// notifier.on('click', function (notifierObject, options) {
-//   // Triggers if `wait: true` and user clicks notification 
-// });
- 
-
-
 //        // Create the browser window and disable integration with node
 //         mainWindow = new BrowserWindow({
 //           width: 800,
@@ -146,8 +103,6 @@ fs.readdir(dir, function(err, items) {
 //       // when you should delete the corresponding element.
 //       mainWindow = null;
 //     });
-
-   
-
+ 
 });
 
