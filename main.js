@@ -15,32 +15,48 @@ var BrowserWindow = require('browser-window');
 const child_process = require('child_process');
 var graphql = require ('graphql').graphql;
 var chokidar= require('chokidar');
+ var mkdirp = require('mkdirp');
+var filessystem = require('fs');
+
+    	
+	var dir = '/home/StreamUpBox';
+    if (!filessystem.existsSync(dir)){
+        filessystem.mkdirSync(dir);
+		console.log("Folder created Successfully!");
+    }else
+    {
+        console.log("Folder already exist!");
+    }
 
 
 require('crash-reporter').start();
-
 fs.watch("/home/StreamUpBox", { persistent: true }, function (event, fileName) {
       console.log("Event: " + event);
       console.log(fileName + "\n");
 });
 
+// 	var dir=shell.exec('./dir.sh',{async:false}).output;
+// 	mkdirp ('dir', function(err) {
+// 	shell.echo(dir);
+	
+// });
 var mainWindow = null;
-var options = {
-	"debug": true   ,
-	"version": "1.0.0",
-	"views_dir": "views",
-	"root_view": "index.html"
-};
+// var options = {
+// 	"debug": true   ,
+// 	"version": "1.0.0",
+// 	"views_dir": "views",
+// 	"root_view": "index.html"
+// };
 
-options = _.extend({
-	// ADDITIONAL CUSTOM SETTINGS
-}, options);
+// options = _.extend({
+// 	// ADDITIONAL CUSTOM SETTINGS
+// }, options);
 
-//how ti run a script in background forever
-//understanding the app from electron!
-app.on('window-all-closed', function() {
-  if(process.platform !== 'darwin') { app.quit(); }
-});
+// //how ti run a script in background forever
+// //understanding the app from electron!
+// app.on('window-all-closed', function() {
+//   if(process.platform !== 'darwin') { app.quit(); }
+// });
 
 
 // app.on('ready', function() {
