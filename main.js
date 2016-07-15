@@ -98,8 +98,8 @@ fs.readdir(dir, function(err, items) {
 	console.log("NUmber of items:"+items.length);
     // notify =  items.length;
     notifier.notify({
-        title: 'My awesome title',
-        message: items.length,
+        title: 'In my Directory I have:',
+        message: items.length+ " Items!",
         icon: path.join(__dirname, 'coulson.jpg'), // Absolute path (doesn't work on balloons) 
         sound: true, // Only Notification Center or Windows Toasters 
         wait: true // Wait with callback, until user action is taken against notification 
