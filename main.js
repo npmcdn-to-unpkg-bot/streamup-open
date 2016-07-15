@@ -18,8 +18,8 @@ var chokidar= require('chokidar');
  var mkdirp = require('mkdirp');
 var filessystem = require('fs');
 
-    	
-	
+    
+
 
 // function sortDirectory(path, files, callback, i, dir) {
 //     if (!i) {i = 0;}                                            //Init
@@ -110,7 +110,30 @@ fs.readdir(dir, function(err, items) {
         notifier.on('timeout', function (notifierObject, options) {
         // Triggers if `wait: true` and notification closes 
         });
+
+        var count=items.length;
+    if(count=count+1)
+    {
+    notifier.notify({
+        title: 'Folder Modifications',
+        message: 'You add some Items',
+        icon: path.join(__dirname, 'coulson.jpg'), // Absolute path (doesn't work on balloons) 
+        sound: true, // Only Notification Center or Windows Toasters 
+        wait: true // Wait with callback, until user action is taken against notification 
+        }, function (err, response) {
+        // Response is response from notification 
+        });
+
+        notifier.on('timeout', function (notifierObject, options) {
+        // Triggers if `wait: true` and notification closes 
+        });
+        
+    }
+
+        
 });
+
+
 
 
 
