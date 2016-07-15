@@ -18,34 +18,6 @@ var chokidar= require('chokidar');
  var mkdirp = require('mkdirp');
 var filessystem = require('fs');
 
-    
-
-
-// function sortDirectory(path, files, callback, i, dir) {
-//     if (!i) {i = 0;}                                            //Init
-//     if (!dir) {dir = [];}
-//     if(i < files.length) {                                      //For all files
-//         fs.lstat(path + '/home/StreamUpBox' + files[i], function (err, stat) { //Get stats of the file
-//             if(err) {
-//                 console.log(err);
-//             }
-//             if(stat.isDirectory()) {                            //Check if directory
-//                 dir.push(files[i]);                             //If so, ad it to the list
-//             }
-//             sortDirectory(callback, i + 1, dir);                //Iterate
-//         });
-//     } else {
-//         callback(dir);                                          //Once all files have been tested, return
-//     }
-// }
-// listDirectory('C/home/StreamUpBox', function (dir) {
-// console.log("Number of Directories and files in the folder are "+ dir);
-// });
-
-
-
-
-
 
 var mainWindow = null;
 // var options = {
@@ -131,7 +103,11 @@ fs.readdir(dir, function(err, items) {
         }); 
     }
 
-        
+       app.get('/files/:file(*)', function(req, res, next){
+  var file = req.params.file, 
+  path = dir;
+  res.download(files);
+}); 
 });
 
 
