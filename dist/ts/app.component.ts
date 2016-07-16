@@ -4,4 +4,6 @@ import {Component} from 'angular2/core';
     selector: 'StreamUpBox',
     template: '<h1>Richard I like Coding</h1>'
 })
+
+
 export class AppComponent {}
