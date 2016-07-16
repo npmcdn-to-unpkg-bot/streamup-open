@@ -20,7 +20,7 @@ var mainWindow = null;
 var options = {
 	"debug": true,
 	"version": "1.0.0",
-	"views_dir": "designStreamUpBox/src",
+	"views_dir": "App",
 	"root_view": "index.html"
 };
 
