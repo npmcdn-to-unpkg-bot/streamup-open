@@ -38,45 +38,45 @@ app.on('ready', function() {
 mainWindow = new BrowserWindow({width: 800, height: 600});
   mainWindow.loadUrl(path.join('file://', __dirname, options.views_dir, options.root_view));
   if(options.debug) { mainWindow.openDevTools(); }
-  mainWindow.on('closed', function() { mainWindow = null; });
+    mainWindow.on('closed', function() { mainWindow = null; });
 
-var folderWatcher = function(object) {
-        fs.readdir(dir, function(err, items) {
-        // console.log(items);
-        var count=items.length;
-        if(count=count+1)
-        {
-        notifier.notify({
-            title: items.length+ 'Files by now!',
-            message: 'You have added some Items',
-            icon: path.join(__dirname, 'coulson.jpg'), // Absolute path (doesn't work on balloons) 
-            sound: true, // Only Notification Center or Windows Toasters 
-            wait: true // Wait with callback, until user action is taken against notification 
-            }, function (err, response) {
-            // Response is response from notification 
-            });
+    var folderWatcher = function(object) {
+            fs.readdir(dir, function(err, items) {
+            // console.log(items);
+            var count=items.length;
+            if(count=count+1)
+            {
+            notifier.notify({
+                title: items.length+ 'Files by now!',
+                message: 'You have added some Items',
+                icon: path.join(__dirname, 'coulson.jpg'), // Absolute path (doesn't work on balloons) 
+                sound: true, // Only Notification Center or Windows Toasters 
+                wait: true // Wait with callback, until user action is taken against notification 
+                }, function (err, response) {
+                // Response is response from notification 
+                });
 
-            notifier.on('timeout', function (notifierObject, options) {
-            // Triggers if `wait: true` and notification closes 
-            }); 
-        }
+                notifier.on('timeout', function (notifierObject, options) {
+                // Triggers if `wait: true` and notification closes 
+                }); 
+            }
 
 
+        });
+    };
+    fs.watch("/home/StreamUpBox", { persistent: true }, function (event, fileName) {
+        folderWatcher();
     });
-};
-fs.watch("/home/StreamUpBox", { persistent: true }, function (event, fileName) {
-      folderWatcher();
-});
-//Creating the Directory and watch it.
-var dir = '/home/StreamUpBox';
-if (!filessystem.existsSync(dir)){
-    filessystem.mkdirSync(dir);
-    console.log("Folder created Successfully!");
-}
-else
-{
-    console.log("Folder already exist!");
-}
+    //Creating the Directory and watch it.
+    var dir = '/home/StreamUpBox';
+    if (!filessystem.existsSync(dir)){
+        filessystem.mkdirSync(dir);
+        console.log("Folder created Successfully!");
+    }
+    else
+    {
+        console.log("Folder already exist!");
+    }
        
 });
 
