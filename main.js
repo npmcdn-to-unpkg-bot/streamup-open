@@ -18,7 +18,7 @@ var filessystem = require('fs');
 
 var mainWindow = null;
 var options = {
-	"debug": true,
+	"debug": false,
 	"version": "1.0.0",
 	"views_dir": "App",
 	"root_view": "index.html"
