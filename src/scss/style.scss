@@ -4,7 +4,20 @@
 @import 'includes/footer';
 
 html, body {
-	width: 100%;
-	height: 100%;
-	background: #FEFEFE;
+	background: #0C7CA2;
+	height: 725px;
+	overflow: hidden;
+	width: 368px;
+	-webkit-app-region: drag;
+	-webkit-user-select: none;
+}
+.main {
+    background: #1DCCEB;
+    border-bottom: 1px solid #73E2F7;
+    height: 700px;
+}
+.close {
+    background: transparent url('../img/close.png') no-repeat 4px 4px;
+    background-size: 24px 24px;
+    right: 6px;
 }

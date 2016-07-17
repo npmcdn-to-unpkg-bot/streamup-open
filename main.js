@@ -17,8 +17,13 @@ var filessystem = require('fs');
 
 
 var mainWindow = null;
+var globalShortcut = require('global-shortcut');
+
+//install nconf dependency for this configuration to work
+// var configuration = require('./configuration');
+
 var options = {
-	"debug": false,
+	"debug": true,
 	"version": "1.0.0",
 	"views_dir": "App",
 	"root_view": "index.html"
@@ -34,8 +39,27 @@ require('crash-reporter').start();
 
 app.on('ready', function() {
 
+    // if (!configuration.readSettings('shortcutKeys')) {
+    //     configuration.saveSettings('shortcutKeys', ['ctrl', 'shift']);
+    // };
+    mainWindow = new BrowserWindow({frame: false,
+            height: 700,
+            resizable: false,
+            width: 368});
+    // setGlobalShortcuts();
+    // function setGlobalShortcuts() {
+    //     globalShortcut.unregisterAll();
 
-mainWindow = new BrowserWindow({width: 800, height: 600});
+    //     var shortcutKeysSetting = configuration.readSettings('shortcutKeys');
+    //     var shortcutPrefix = shortcutKeysSetting.length === 0 ? '' : shortcutKeysSetting.join('+') + '+';
+
+    //     globalShortcut.register(shortcutPrefix + '1', function () {
+    //         mainWindow.webContents.send('global-shortcut', 0);
+    //     });
+    //     globalShortcut.register(shortcutPrefix + '2', function () {
+    //         mainWindow.webContents.send('global-shortcut', 1);
+    //     });
+    // };
   mainWindow.loadUrl(path.join('file://', __dirname, options.views_dir, options.root_view));
   if(options.debug) { mainWindow.openDevTools(); }
     mainWindow.on('closed', function() { mainWindow = null; });
@@ -49,7 +73,7 @@ mainWindow = new BrowserWindow({width: 800, height: 600});
             notifier.notify({
                 title: items.length+ 'Files by now!',
                 message: 'You have added some Items',
-                icon: path.join(__dirname, 'coulson.jpg'), // Absolute path (doesn't work on balloons) 
+                icon: path.join(__dirname, '/dist/img/app-icon.jpg'), // Absolute path (doesn't work on balloons) 
                 sound: true, // Only Notification Center or Windows Toasters 
                 wait: true // Wait with callback, until user action is taken against notification 
                 }, function (err, response) {
