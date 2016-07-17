@@ -23,7 +23,7 @@ var globalShortcut = require('global-shortcut');
 // var configuration = require('./configuration');
 
 var options = {
-	"debug": true,
+	"debug": false,
 	"version": "1.0.0",
 	"views_dir": "App",
 	"root_view": "index.html"
@@ -43,7 +43,7 @@ app.on('ready', function() {
     //     configuration.saveSettings('shortcutKeys', ['ctrl', 'shift']);
     // };
     mainWindow = new BrowserWindow({frame: false,
-            height: 700,
+            height: 500,
             resizable: false,
             width: 368});
     // setGlobalShortcuts();
@@ -72,8 +72,8 @@ app.on('ready', function() {
             {
             notifier.notify({
                 title: items.length+ 'Files by now!',
-                message: 'You have added some Items',
-                icon: path.join(__dirname, '/dist/img/app-icon.jpg'), // Absolute path (doesn't work on balloons) 
+                message: 'You have added some Files',
+                icon: path.join(__dirname, '/dist/img/app-icon.png'), // Absolute path (doesn't work on balloons) 
                 sound: true, // Only Notification Center or Windows Toasters 
                 wait: true // Wait with callback, until user action is taken against notification 
                 }, function (err, response) {

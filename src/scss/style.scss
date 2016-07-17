@@ -4,7 +4,7 @@
 @import 'includes/footer';
 
 html, body {
-	background: #0C7CA2;
+	background: #1DCCEB;
 	height: 725px;
 	overflow: hidden;
 	width: 368px;
@@ -15,9 +15,18 @@ html, body {
     background: #1DCCEB;
     border-bottom: 1px solid #73E2F7;
     height: 700px;
+    img{
+    	width:80px;
+		margin-top: 80px;
+    	margin-left:145px;
+    }
 }
 .close {
     background: transparent url('../img/close.png') no-repeat 4px 4px;
     background-size: 24px 24px;
     right: 6px;
+}
+.login-form{
+	margin-top:180px;
+	margin-left:50px;
 }
