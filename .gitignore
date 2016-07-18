@@ -4,9 +4,9 @@
 Homestead.yaml
 Homestead.json
 .env
-/bower_resources
-/bower_components
-/typings
+App/bower_resources
+
+typings
 build/
 coverage/
 karma-coverage/
