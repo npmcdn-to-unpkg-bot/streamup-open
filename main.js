@@ -35,8 +35,6 @@ options = _.extend({
 
 
 require('crash-reporter').start();
-
-
 app.on('ready', function() {
 
      if (!configuration.readSettings('shortcutKeys')) {
