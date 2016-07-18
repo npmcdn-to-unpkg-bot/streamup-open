@@ -8,8 +8,8 @@ var app=require ('app');
 var path = require('path');
 var shell = require('shelljs');
 var BrowserWindow = require('browser-window');
-const notifier = require('node-notifier');
-const child_process = require('child_process');
+var notifier = require('node-notifier');
+var child_process = require('child_process');
 var graphql = require ('graphql').graphql;
 var chokidar= require('chokidar');
  var mkdirp = require('mkdirp');
@@ -20,7 +20,7 @@ var mainWindow = null;
 var globalShortcut = require('global-shortcut');
 
 //install nconf dependency for this configuration to work
-// var configuration = require('./configuration');
+var configuration = require('./configuration');
 
 var options = {
 	"debug": false,
@@ -39,27 +39,27 @@ require('crash-reporter').start();
 
 app.on('ready', function() {
 
-    // if (!configuration.readSettings('shortcutKeys')) {
-    //     configuration.saveSettings('shortcutKeys', ['ctrl', 'shift']);
-    // };
+     if (!configuration.readSettings('shortcutKeys')) {
+         configuration.saveSettings('shortcutKeys', ['ctrl', 'shift']);
+     };
     mainWindow = new BrowserWindow({frame: false,
             height: 500,
             resizable: false,
             width: 368});
-    // setGlobalShortcuts();
-    // function setGlobalShortcuts() {
-    //     globalShortcut.unregisterAll();
+     setGlobalShortcuts();
+     function setGlobalShortcuts() {
+         globalShortcut.unregisterAll();
 
-    //     var shortcutKeysSetting = configuration.readSettings('shortcutKeys');
-    //     var shortcutPrefix = shortcutKeysSetting.length === 0 ? '' : shortcutKeysSetting.join('+') + '+';
+         var shortcutKeysSetting = configuration.readSettings('shortcutKeys');
+         var shortcutPrefix = shortcutKeysSetting.length === 0 ? '' : shortcutKeysSetting.join('+') + '+';
 
-    //     globalShortcut.register(shortcutPrefix + '1', function () {
-    //         mainWindow.webContents.send('global-shortcut', 0);
-    //     });
-    //     globalShortcut.register(shortcutPrefix + '2', function () {
-    //         mainWindow.webContents.send('global-shortcut', 1);
-    //     });
-    // };
+         globalShortcut.register(shortcutPrefix + '1', function () {
+             mainWindow.webContents.send('global-shortcut', 0);
+         });
+         globalShortcut.register(shortcutPrefix + '2', function () {
+             mainWindow.webContents.send('global-shortcut', 1);
+         });
+     };
   mainWindow.loadUrl(path.join('file://', __dirname, options.views_dir, options.root_view));
   if(options.debug) { mainWindow.openDevTools(); }
     mainWindow.on('closed', function() { mainWindow = null; });
