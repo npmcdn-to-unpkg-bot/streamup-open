@@ -1,9 +1,35 @@
-<div ng-controller="loginController" >
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Awesome Chat</title>
+</head>
+<body>
+  <header>
+           <i class="fa fa-fw fa-external-link"></i>
+      </a>
+  </header>
+ 
+  <section>
+    <div id="messages"></div>
+    Username
+	<input id="chat-input" type="text" placeholder="your username" autofocus/>
 	
-    <dir class="login-form">
-    	<form class="form-control">
-    		<input type="text" class="form-control">
-    		<input type="text" class="form-control">
-    	</form>
-    </dir>
-</div>
+	
+  </section>
+   <section>
+    <div id="messages"></div>
+    Username
+	<input id="chat-input2" type="text" placeholder="your username" autofocus/>
+	
+	
+  </section>
+  <script>
+	  
+	  $('#chat-input2').click(function(ev){
+		  ev.preventDefault();
+		  console.log('we are sure that we are listening on click event');
+	  });
+  </script>
+  <!--<script src="index.js"></script>-->
+</body>
+</html>

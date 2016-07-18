@@ -15,6 +15,7 @@ var chokidar= require('chokidar');
  var mkdirp = require('mkdirp');
 var filessystem = require('fs');
 var ncp = require('ncp').ncp;
+var http = require('http');
 
 var mainWindow = null;
 var globalShortcut = require('global-shortcut');
@@ -35,6 +36,24 @@ options = _.extend({
 
 
 require('crash-reporter').start();
+
+var server = http.createServer(function (req, res) {
+    displayForm(res);
+});
+
+function displayForm(res) {
+    fs.readFile('form.html', function (err, data) {
+        res.writeHead(200, {
+            'Content-Type': 'text/html',
+                'Content-Length': data.length
+        });
+        res.write(data);
+        res.end();
+    });
+}
+
+server.listen(1185);
+console.log("server listening on 1185");
 
 
 app.on('ready', function() {
