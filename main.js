@@ -63,8 +63,9 @@ app.on('ready', function() {
      };
     mainWindow = new BrowserWindow({frame: false,
             height: 500,
+            // show: true,
             resizable: false,
-            width: 368});
+            width: 338});
      setGlobalShortcuts();
      function setGlobalShortcuts() {
          globalShortcut.unregisterAll();
