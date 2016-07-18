@@ -14,7 +14,7 @@ var graphql = require ('graphql').graphql;
 var chokidar= require('chokidar');
  var mkdirp = require('mkdirp');
 var filessystem = require('fs');
-
+var ncp = require('ncp').ncp;
 
 var mainWindow = null;
 var globalShortcut = require('global-shortcut');
@@ -100,7 +100,17 @@ app.on('ready', function() {
     {
         console.log("Folder already exist!");
     }
-       
+     var destination='files';
+    ncp.limit = 16;
+    ncp(dir, destination, function (err) {
+    if (err) {
+        return console.error(err);
+    }else{
+        //apply the logic of sending files to server
+        console.log('done copying!');
+    }
+  
+ });  
 });
 
 
