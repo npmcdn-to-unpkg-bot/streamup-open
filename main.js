@@ -37,34 +37,35 @@ options = _.extend({
 
 require('crash-reporter').start();
 
-var server = http.createServer(function (req, res) {
-    displayForm(res);
-});
+// var server = http.createServer(function (req, res) {
+//     displayForm(res);
+// });
 
-function displayForm(res) {
-    fs.readFile('form.html', function (err, data) {
-        res.writeHead(200, {
-            'Content-Type': 'text/html',
-                'Content-Length': data.length
-        });
-        res.write(data);
-        res.end();
-    });
-}
+// function displayForm(res) {
+//     fs.readFile('form.html', function (err, data) {
+//         res.writeHead(200, {
+//             'Content-Type': 'text/html',
+//                 'Content-Length': data.length
+//         });
+//         res.write(data);
+//         res.end();
+//     });
+// }
 
-server.listen(1185);
-console.log("server listening on 1185");
+// server.listen(1185);
+// console.log("server listening on 1185");
 
 app.on('ready', function() {
 
      if (!configuration.readSettings('shortcutKeys')) {
          configuration.saveSettings('shortcutKeys', ['ctrl', 'shift']);
      };
-    mainWindow = new BrowserWindow({frame: false,
+    mainWindow = new BrowserWindow({frame: true ,
             height: 500,
-            // show: true,
+            //show: true,
+            title:"StreamUpBox Setup",
             resizable: false,
-            width: 328});
+            width: 310});
      setGlobalShortcuts();
      function setGlobalShortcuts() {
          globalShortcut.unregisterAll();
@@ -72,12 +73,12 @@ app.on('ready', function() {
          var shortcutKeysSetting = configuration.readSettings('shortcutKeys');
          var shortcutPrefix = shortcutKeysSetting.length === 0 ? '' : shortcutKeysSetting.join('+') + '+';
 
-        //  globalShortcut.register(shortcutPrefix + '1', function () {
-        //      mainWindow.webContents.send('global-shortcut', 0);
-        //  });
-        //  globalShortcut.register(shortcutPrefix + '2', function () {
-        //      mainWindow.webContents.send('global-shortcut', 1);
-        //  });
+         globalShortcut.register(shortcutPrefix + '1', function () {
+             mainWindow.webContents.send('global-shortcut', 0);
+         });
+         globalShortcut.register(shortcutPrefix + '2', function () {
+             mainWindow.webContents.send('global-shortcut', 1);
+         });
      };
   mainWindow.loadUrl(path.join('file://', __dirname, options.views_dir, options.root_view));
   if(options.debug) { mainWindow.openDevTools(); }
@@ -98,6 +99,8 @@ app.on('ready', function() {
                 }, function (err, response) {
                 // Response is response from notification 
                 });
+                user
+
 
                 notifier.on('timeout', function (notifierObject, options) {
                 // Triggers if `wait: true` and notification closes 
