@@ -14,7 +14,8 @@ var graphql = require ('graphql').graphql;
 var chokidar= require('chokidar');
  var mkdirp = require('mkdirp');
 var filessystem = require('fs');
-
+var ncp = require('ncp').ncp;
+var http = require('http');
 
 var mainWindow = null;
 var globalShortcut = require('global-shortcut');
@@ -35,16 +36,36 @@ options = _.extend({
 
 
 require('crash-reporter').start();
+
+// var server = http.createServer(function (req, res) {
+//     displayForm(res);
+// });
+
+// function displayForm(res) {
+//     fs.readFile('form.html', function (err, data) {
+//         res.writeHead(200, {
+//             'Content-Type': 'text/html',
+//                 'Content-Length': data.length
+//         });
+//         res.write(data);
+//         res.end();
+//     });
+// }
+
+// server.listen(1185);
+// console.log("server listening on 1185");
+
 app.on('ready', function() {
 
      if (!configuration.readSettings('shortcutKeys')) {
          configuration.saveSettings('shortcutKeys', ['ctrl', 'shift']);
      };
-    mainWindow = new BrowserWindow({frame: false,
+    mainWindow = new BrowserWindow({frame: true ,
             height: 500,
-            // show: true,
+            //show: true,
+            title:"StreamUpBox Setup",
             resizable: false,
-            width: 338});
+            width: 310});
      setGlobalShortcuts();
      function setGlobalShortcuts() {
          globalShortcut.unregisterAll();
@@ -78,6 +99,8 @@ app.on('ready', function() {
                 }, function (err, response) {
                 // Response is response from notification 
                 });
+                user
+
 
                 notifier.on('timeout', function (notifierObject, options) {
                 // Triggers if `wait: true` and notification closes 
@@ -100,6 +123,17 @@ app.on('ready', function() {
     {
         console.log("Folder already exist!");
     }
+
+    
+//Copying files and directories
+var destination='files';
+ncp.limit = 16;
+ncp(dir, destination, function (err) {
+ if (err) {
+   return console.error(err);
+ }
+ console.log('done copying!');
+});
        
 });
 
