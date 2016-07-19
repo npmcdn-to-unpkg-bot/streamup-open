@@ -1,5 +1,4 @@
 @import 'base/base';
-
 @import 'includes/nav';
 @import 'includes/footer';
 
@@ -29,4 +28,19 @@ html, body {
 .login-form{
 	margin-top:180px;
 	margin-left:50px;
+}
+
+.title {
+  font-size:20px;
+  font-family: 'Tahoma';
+  margin: 1em auto;
+  width: 30%;
+  text-align: center;
+  color: white;
+  top: 20px;
+}
+
+.table1{
+	color: white;
+	
 }
