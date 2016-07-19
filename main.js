@@ -15,8 +15,13 @@ var chokidar= require('chokidar');
  var mkdirp = require('mkdirp');
 var filessystem = require('fs');
 var ncp = require('ncp').ncp;
+<<<<<<< HEAD
 // var angular = require('angular');
 var express = require('express'), cors = require('cors');
+=======
+var http = require('http');
+
+>>>>>>> c17448162611ce1ab165441f45b3c4477a0155e9
 var mainWindow = null;
 var globalShortcut = require('global-shortcut');
 
@@ -36,16 +41,36 @@ options = _.extend({
 
 
 require('crash-reporter').start();
+
+// var server = http.createServer(function (req, res) {
+//     displayForm(res);
+// });
+
+// function displayForm(res) {
+//     fs.readFile('form.html', function (err, data) {
+//         res.writeHead(200, {
+//             'Content-Type': 'text/html',
+//                 'Content-Length': data.length
+//         });
+//         res.write(data);
+//         res.end();
+//     });
+// }
+
+// server.listen(1185);
+// console.log("server listening on 1185");
+
 app.on('ready', function() {
 
      if (!configuration.readSettings('shortcutKeys')) {
          configuration.saveSettings('shortcutKeys', ['ctrl', 'shift']);
      };
-    mainWindow = new BrowserWindow({frame: false,
+    mainWindow = new BrowserWindow({frame: true ,
             height: 500,
-            // show: true,
+            //show: true,
+            title:"StreamUpBox Setup",
             resizable: false,
-            width: 338});
+            width: 310});
      setGlobalShortcuts();
      function setGlobalShortcuts() {
          globalShortcut.unregisterAll();
@@ -72,6 +97,7 @@ app.on('ready', function() {
                 wait: true // Wait with callback, until user action is taken against notification 
                 }, function (err, response) {
                 // Response is response from notification 
+
             });
     };
     var folderWatcher = function(object) {
@@ -107,14 +133,13 @@ app.on('ready', function() {
                  notie('add new file');
             }else if(event ==="change"){
                  notie('changes');
+
             }
             
             console.log(event, path);
         });
     };
-    fs.watch("/home/StreamUpBox", { persistent: true }, function (event, fileName) {
-        folderWatcher();
-    });
+    
     //Creating the Directory and watch it.
     var dir = '/home/StreamUpBox';
     if (!filessystem.existsSync(dir)){
@@ -125,7 +150,11 @@ app.on('ready', function() {
     {
         console.log("Folder already exist!");
     }
-     var destination='files';
+
+    fs.watch("/home/StreamUpBox", { persistent: true }, function (event, fileName) {
+        folderWatcher();
+    });
+    var destination='files';
     ncp.limit = 16;
     ncp(dir, destination, function (err) {
     if (err) {
@@ -144,6 +173,10 @@ app.on('ready', function() {
     }
   
  });  
+
+
+    
+
 });
 
 
