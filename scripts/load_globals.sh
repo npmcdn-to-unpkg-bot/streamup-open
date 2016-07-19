@@ -9,5 +9,6 @@ done;
 
 sudo npm i -g node-sass
 sudo npm rebuild node-sass
+sudo bower install --allow-root
 
 printf "\nDONE\n";
