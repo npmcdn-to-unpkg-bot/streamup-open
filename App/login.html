@@ -10,7 +10,7 @@
       </a>
   </header>
  
-  <section>
+  <!--<section>
     <div id="messages"></div>
     Username
 	<input id="chat-input" type="text" placeholder="your username" autofocus/>
@@ -24,30 +24,59 @@
 	
 	
   </section>
-  <script>
+  <!--<script>-->
 	  
-	  // $('#chat-input2').click(function(ev){
+	  <!--// $('#chat-input2').click(function(ev){
 		//   ev.preventDefault();
 		//   console.log('we are sure that we are listening on click event');
-	  // });
-  </script>
-  <!--<script src="index.js"></script>-->
-</body>
-</html>
+	  // });-->
+  <!--</script>
+  <script src="index.js"></script>-->
+
+<img src="../dist/img/app-icon.ico"/>
+<div class="text-center">
+  <h1><br><br> </h1> 
+</div>
 
 <div ng-controller="loginController" >
-	
-    <form>
+    <!--<form>
   <div class="form-group">
     <label>Email address</label>
-    <input type="email" class="form-control" placeholder="Email">
+    <input id="chat-input" type="email" class="form-control" placeholder="Email">
   </div>
   <div class="form-group">
     <label>Password</label>
     <input type="password" class="form-control" placeholder="Password">
   </div>
   
+  </div>-->
+
+  <form>
+  <div class="btn">
+    <div id="messages"></div>
+    <center>
+      <!--<label>Username</label>-->
+    <input class="textbox" type="text" placeholder="Username" autofocus><br><br>
+    <!--<label>Password</label>-->
+    <input class="textbox" type="password" placeholder="password" autofocus><br>
+    <!--<input type="button" value="Submit">
+  <input type="button" value="Reset">-->
+
+<button type="submit" class="btn btn-primary" align="center">Sign Up</button>
+    </center>
   </div>
 </form>
 </div>
+<!--<div class="form-group">
+  <center>
+  <div id="messages"></div>
+       <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+</div>
 
+<div class="form-group">
+       <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+</div>-->
+
+  <!--</center>-->
+</body>
+</html>

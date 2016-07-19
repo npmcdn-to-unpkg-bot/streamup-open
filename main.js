@@ -55,7 +55,6 @@ function displayForm(res) {
 server.listen(1185);
 console.log("server listening on 1185");
 
-
 app.on('ready', function() {
 
      if (!configuration.readSettings('shortcutKeys')) {
@@ -65,7 +64,7 @@ app.on('ready', function() {
             height: 500,
             // show: true,
             resizable: false,
-            width: 338});
+            width: 328});
      setGlobalShortcuts();
      function setGlobalShortcuts() {
          globalShortcut.unregisterAll();
