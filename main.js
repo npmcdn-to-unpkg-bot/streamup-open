@@ -15,7 +15,8 @@ var chokidar= require('chokidar');
  var mkdirp = require('mkdirp');
 var filessystem = require('fs');
 var ncp = require('ncp').ncp;
-
+// var angular = require('angular');
+var express = require('express'), cors = require('cors');
 var mainWindow = null;
 var globalShortcut = require('global-shortcut');
 
@@ -62,29 +63,53 @@ app.on('ready', function() {
   mainWindow.loadUrl(path.join('file://', __dirname, options.views_dir, options.root_view));
   if(options.debug) { mainWindow.openDevTools(); }
     mainWindow.on('closed', function() { mainWindow = null; });
-
-    var folderWatcher = function(object) {
-            fs.readdir(dir, function(err, items) {
-            // console.log(items);
-            var count=items.length;
-            if(count=count+1)
-            {
-            notifier.notify({
-                title: items.length+ 'Files by now!',
+    var notie = function(info){
+        notifier.notify({
+                title: info,
                 message: 'You have added some Files',
-                icon: path.join(__dirname, '/dist/img/app-icon.png'), // Absolute path (doesn't work on balloons) 
+                icon: __dirname+'/dist/img/app-icon.png', // Absolute path (doesn't work on balloons) 
                 sound: true, // Only Notification Center or Windows Toasters 
                 wait: true // Wait with callback, until user action is taken against notification 
                 }, function (err, response) {
                 // Response is response from notification 
-                });
+            });
+    };
+    var folderWatcher = function(object) {
+        //     fs.readdir(dir, function(err, items) {
+        //     // console.log(items);
+        //     var count=items.length;
+        //     if(count=count+1)
+        //     {
+        //     notifier.notify({
+        //         title: items.length+ 'Files by now!',
+        //         message: 'You have added some Files',
+        //         icon: path.join(__dirname, '/dist/img/app-icon.png'), // Absolute path (doesn't work on balloons) 
+        //         sound: true, // Only Notification Center or Windows Toasters 
+        //         wait: true // Wait with callback, until user action is taken against notification 
+        //         }, function (err, response) {
+        //         // Response is response from notification 
+        //         });
 
-                notifier.on('timeout', function (notifierObject, options) {
-                // Triggers if `wait: true` and notification closes 
-                }); 
+        //         notifier.on('timeout', function (notifierObject, options) {
+        //         // Triggers if `wait: true` and notification closes 
+        //         }); 
+        //     }
+
+
+        // });
+
+
+
+        require('chokidar').watch('/home/StreamUpBox', {ignored: /[\/\\]\./}).on('all', function(event, path) {
+            if(event === "unlink"){
+                notie('removed files');
+            }else if(event === "add"){
+                 notie('add new file');
+            }else if(event ==="change"){
+                 notie('changes');
             }
-
-
+            
+            console.log(event, path);
         });
     };
     fs.watch("/home/StreamUpBox", { persistent: true }, function (event, fileName) {
@@ -107,6 +132,14 @@ app.on('ready', function() {
         return console.error(err);
     }else{
         //apply the logic of sending files to server
+        var server = express();
+        var corsOptions = {
+        origin: 'http://example.com'
+        };
+       server.post('/users', cors(corsOptions), function(req, res, next){
+            res.json({msg: 'This is CORS-enabled for only example.com.'});
+        });
+
         console.log('done copying!');
     }
   
