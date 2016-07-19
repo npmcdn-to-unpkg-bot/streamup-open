@@ -72,12 +72,12 @@ app.on('ready', function() {
          var shortcutKeysSetting = configuration.readSettings('shortcutKeys');
          var shortcutPrefix = shortcutKeysSetting.length === 0 ? '' : shortcutKeysSetting.join('+') + '+';
 
-         globalShortcut.register(shortcutPrefix + '1', function () {
-             mainWindow.webContents.send('global-shortcut', 0);
-         });
-         globalShortcut.register(shortcutPrefix + '2', function () {
-             mainWindow.webContents.send('global-shortcut', 1);
-         });
+        //  globalShortcut.register(shortcutPrefix + '1', function () {
+        //      mainWindow.webContents.send('global-shortcut', 0);
+        //  });
+        //  globalShortcut.register(shortcutPrefix + '2', function () {
+        //      mainWindow.webContents.send('global-shortcut', 1);
+        //  });
      };
   mainWindow.loadUrl(path.join('file://', __dirname, options.views_dir, options.root_view));
   if(options.debug) { mainWindow.openDevTools(); }
