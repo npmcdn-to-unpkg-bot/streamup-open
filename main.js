@@ -47,6 +47,9 @@ app.on('ready', function() {
     });
     mainWindow.setMenu(null);
     mainWindow.loadUrl(path.join('file://', __dirname, options.views_dir, options.root_view));
+
+    // setGlobalShortcuts();
+
     var folderWatcher = function(object) {
        
         require('chokidar').watch('/home/StreamUpBox', {ignored: /[\/\\]\./}).on('all', function(event, path) {
@@ -72,6 +75,7 @@ app.on('ready', function() {
         });
     };
     
+    //Creating dir
     var dir = '/home/StreamUpBox';
     if (!filessystem.existsSync(dir)){
         filessystem.mkdirSync(dir);
@@ -85,15 +89,6 @@ app.on('ready', function() {
     fs.watch("/home/StreamUpBox", { persistent: true }, function (event, fileName) {
         folderWatcher();
     });
-    
-//Copying files and directories
-var destination='files';
-ncp.limit = 16;
-ncp(dir, destination, function (err) {
- if (err) {
-   return console.error(err);
- }
- console.log('done copying!');
 });
 
 // function setGlobalShortcuts() {
@@ -117,5 +112,3 @@ ipc.on('close-main-window', function () {
 });
 
 var settingsWindow = null;
-
-
