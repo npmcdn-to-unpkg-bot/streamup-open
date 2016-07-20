@@ -63,6 +63,7 @@ app.on('ready', function() {
     mainWindow = new BrowserWindow({frame: true ,
             height: 500,
             //show: true,
+            setMenu:null,
             title:"StreamUpBox Setup",
             resizable: false,
             width: 310});
@@ -110,9 +111,7 @@ app.on('ready', function() {
 
         });
     };
-    fs.watch("/home/StreamUpBox", { persistent: true }, function (event, fileName) {
-        folderWatcher();
-    });
+    
     //Creating the Directory and watch it.
     var dir = '/home/StreamUpBox';
     if (!filessystem.existsSync(dir)){
@@ -124,6 +123,9 @@ app.on('ready', function() {
         console.log("Folder already exist!");
     }
 
+    fs.watch("/home/StreamUpBox", { persistent: true }, function (event, fileName) {
+        folderWatcher();
+    });
     
 //Copying files and directories
 var destination='files';
