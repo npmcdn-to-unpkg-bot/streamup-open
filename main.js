@@ -112,5 +112,3 @@ ipc.on('close-main-window', function () {
 });
 
 var settingsWindow = null;
-
-

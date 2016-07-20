@@ -1,7 +1,7 @@
 var sh = require('shelljs');
 var count = 0;
 function annotateFolder (folderPath) {
-  sh.cd(/home/StreamUpBox);
+  sh.cd('/home/StreamUpBox');
   var files = sh.ls() || [];
 
   for (var i=0; i<files.length; i++) {
