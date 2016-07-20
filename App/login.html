@@ -5,6 +5,9 @@
     <title>My login</title>
 </head>
 <body>
+<div class="settings">Settings</div>
+<!--<div class="close">Close</div>-->
+
 <img class="img" src="../dist/img/app-icon.ico"/>
 <div class="text-center">
   <h1><br><br><br><br> </h1> 
@@ -12,12 +15,14 @@
 
 <div ng-controller="loginController" >
   <form>
-  <div class="btn">
+  <div class="btn form-main">
     <div id="messages"></div>
     <center>
-    <input class="textbox" type="text" placeholder="Username" autofocus><br><br>
-    <input class="textbox" type="password" placeholder="password" autofocus><br><br>
-    <button type="submit" class="css_button" align="center">Sign in</button>
+    
+    <input class="textbox" type="text" placeholder="Username" autofocus /><br><br>
+    <input class="textbox" type="password" placeholder="password" /><br><br>
+      <button type="submit" class="css_button" align="center">Sign Up</button>
+      
     </center>
   </div>
 </form>

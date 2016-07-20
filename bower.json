@@ -14,14 +14,14 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components",
+    "bower_resources",
     "public/vendor",
     "test",
     "tests"
   ],
   "dependencies": {
     "angular": "1.4.9",
-    "skeleton": "2.0.4",
+    "skeleton": "^2.0.4",
     "angular-mocks": "1.4.9",
     "jquery": "^3.0.0"
   }

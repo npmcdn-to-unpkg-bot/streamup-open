@@ -120,14 +120,17 @@
     }
   },
   "dependencies": {
+    "angular": "^1.5.7",
     "body-parser": "^1.15.1",
     "chokidar": "^1.6.0",
+    "cors": "^2.7.1",
     "electron-prebuilt": "^0.30.8",
-    "express": "^4.13.4",
+    "express": "^4.14.0",
     "graphQl-Mysql-Server": "^1.0.10",
     "graphql": "^0.5.0",
     "gulp-notify": "^2.2.0",
     "jquery": "^2.1.4",
+    "lokijs": "^1.4.1",
     "method-override": "^2.1.3",
     "mongoose": "^4.4.12",
     "morgan": "^1.1.1",
