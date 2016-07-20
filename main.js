@@ -36,16 +36,16 @@ app.on('ready', function() {
     if (!configuration.readSettings('shortcutKeys')) {
         configuration.saveSettings('shortcutKeys', ['ctrl', 'shift']);
     }
-
+    
     mainWindow = new BrowserWindow({
         frame: true,
-        
+        kiosk: false,
         height: 500,   
         title:"StreamUpBox Setup",
         resizable: false,
         width: 310
     });
-
+    mainWindow.setMenu(null);
     mainWindow.loadUrl(path.join('file://', __dirname, options.views_dir, options.root_view));
 
     // setGlobalShortcuts();
