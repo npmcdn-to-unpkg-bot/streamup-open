@@ -18,9 +18,9 @@
   <div class="form-main">
     <div id="messages"></div>
     <div class="form-container">
-      <input class="form-control" type="text" placeholder="Username" autofocus /><br><br>
-      <input class="form-control" type="password" placeholder="password" /><br><br>
-      <button type="submit" class="stupbx-btn btn-info">Sign In</button>
+      <input class="form-control" type="text" ng-model="data.username" placeholder="Username" autofocus /><br><br>
+      <input class="form-control" type="password" placeholder="password" ng-model="data.password"/><br><br>
+      <button type="submit" class="stupbx-btn btn-info" ng-click="doLogin(data)">Sign In</button>
     </div>
   </div>
 </form>

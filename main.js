@@ -39,7 +39,8 @@ app.on('ready', function() {
     
     mainWindow = new BrowserWindow({
         frame: true,
-        kiosk: false,
+        kiosk: true,
+        
         height: 500,   
         title:"StreamUpBox Setup",
         resizable: false,
