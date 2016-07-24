@@ -24,6 +24,11 @@ sync.config(['$stateProvider','$urlRouterProvider',function($stateProvider, $url
       templateUrl: 'login.html',
       controller: 'loginController',
     })
+    .state('EmailConfirmation', {
+      url: "/EmailConfirmation",
+      templateUrl: 'emailConfirmation.html',
+      controller: 'EmailConfirmation',
+    })
     .state('SignUp', {
       url: "/signup",
       templateUrl: 'signup.html',

@@ -22,7 +22,7 @@ sync.controller('loginController',['$scope','$http','$rootScope','$window','User
     };
   $scope.doLogin = function (info)
   {
-      User.postLogin(info)
+      User.getUserId()
       .then(function(response){
           console.log(response);
       },function(err){

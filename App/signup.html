@@ -13,15 +13,16 @@
   <h1><br><br><br><br> </h1> 
 </div>
 
-<div ng-controller="loginController" >
+<div ng-controller="RegisterController" >
   <form>
   <div class="form-main">
     <div id="messages"></div>
     <div class="form-container">
-      <input class="form-control" type="text" placeholder="Username" autofocus /><br><br>
-      <input class="form-control" type="email" placeholder="Email" /><br><br>
-      <input class="form-control" type="password" placeholder="password" /><br><br>
-      <button type="submit" class="stupbx-btn btn-info">Sign Up</button>
+      <div class="register-form-main-message"></div>
+      <input class="form-control" type="text" ng-model="data.username" id="username" required unique-username placeholder="Username" autofocus /><br><br>
+      <input class="form-control" type="email" ng-model="data.email" id="email" required unique-email  placeholder="Email" /><br><br>
+      <input class="form-control" type="password" ng-model="data.password" placeholder="password" /><br><br>
+      <button type="submit" class="stupbx-btn btn-info" ng-click="doSignUp(data)">Sign Up</button>
     </div>
   </div>
 </form>

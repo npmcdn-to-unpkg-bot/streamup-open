@@ -126,6 +126,7 @@
     "cors": "^2.7.1",
     "electron-prebuilt": "^0.30.8",
     "express": "^4.14.0",
+    "ftpsync": "^0.1.10",
     "graphQl-Mysql-Server": "^1.0.10",
     "graphql": "^0.5.0",
     "gulp-notify": "^2.2.0",

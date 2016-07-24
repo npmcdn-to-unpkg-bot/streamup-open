@@ -1,3 +1,6 @@
+#1.2.1
+    - added ftpsync module
+    - modified register & login
 # 1.2.0
     - Lots of updates to build automation
     - .md file docs updated
