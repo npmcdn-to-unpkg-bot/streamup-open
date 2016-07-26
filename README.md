@@ -40,6 +40,8 @@ you can manage node version by following [Link](http://www.liquidweb.com/kb/how-
 - ``sudo npm install``
 - ``sudo npm start``
 
+Alternatively, you can build all the apps at once by calling `make apps`
+
 As for building the final Desktop Application. You can use any of the following make commands to build them:
 
 - Mac: `make mac-64`
