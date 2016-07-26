@@ -1,9 +1,9 @@
   #!/bin/bash
 
-  if [ ! -d /home/StreamUpBox ]; then
-    sudo mkdir -m 777  -p /home/StreamUpBox;
+  if [ ! -d /home/richard/StreamUpBox ]; then
+     mkdir -m 777  -p /richard/home/StreamUpBox;
     echo "Folder created with success!";
   else
-    ##changing the folder owner for full permission
-    sudo chown  $USER /home/StreamUpBox    
+    echo "folder exist";  
   fi;
+

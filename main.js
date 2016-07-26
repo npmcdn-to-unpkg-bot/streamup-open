@@ -6,14 +6,14 @@ var path = require('path');
 var mainWindow = null;
 var globalShortcut = require('global-shortcut');
 var _ = require('lodash');
-var fs = require('file-system');
+
 var shell = require('shelljs');
 var notification = require('./app_modules/notifier');
 var child_process = require('child_process');
 var graphql = require ('graphql').graphql;
 var chokidar= require('chokidar');
 var mkdirp = require('mkdirp');
-var filessystem = require('fs');
+var fs = require('fs');
 var ncp = require('ncp').ncp;
 var express = require('express'), cors = require('cors');
 var http = require('http');
@@ -41,10 +41,30 @@ app.on('ready', function() {
     mainWindow.setMenu(null);
     mainWindow.loadUrl(path.join('file://', __dirname, options.views_dir, options.root_view));
 
+    var os = require('os'),
+     userInfo = require('user-info');
+    var dir = os.homedir() +'/StreamUpBox';
     
+    
+    
+    if (!fs.existsSync(dir)){
+        fs.mkdirSync(dir);
+        fs.chmodSync(dir, '777');
+      
+        console.log("Folder created Successfully!");
+    }
+    else
+    {
+        fs.chmodSync(dir, '777');
+    
+
+        console.log("Folder already exist!");
+    }
+
+
     var folderWatcher = function(object) {
        
-        require('chokidar').watch('/home/StreamUpBox', {ignored: /[\/\\]\./}).on('all', function(event, path) {
+        require('chokidar').watch(os.homedir()+'/StreamUpBox', {ignored: /[\/\\]\./}).on('all', function(event, path) {
             if(event === "unlink"){
                 notification.send('removed files');
             }else if(event === "add"){
@@ -68,20 +88,7 @@ app.on('ready', function() {
         });
     };
     
- 
-    var dir = '/home/StreamUpBox';
-    if (!filessystem.existsSync(dir)){
-        filessystem.mkdirSync(dir);
-        console.log("Folder created Successfully!");
-    }
-    else
-    {
-        console.log("Folder already exist!");
-    }
-
-    fs.watch("/home/StreamUpBox", { persistent: true }, function (event, fileName) {
-        folderWatcher();
-    });
+    
 });
 
 function setGlobalShortcuts() {
