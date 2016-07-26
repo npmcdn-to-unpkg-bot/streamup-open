@@ -35,10 +35,19 @@ And much more!
 ##  How to install
 Make sure that you are using node 4.2.4 and run this commands
 you can manage node version by following [Link](http://www.liquidweb.com/kb/how-to-install-nvm-node-version-manager-for-node-js-on-ubuntu-12-04-lts/)
-``./scripts/load_globals.sh``
-``sudo npm install --python=python2.7``
-``sudo npm install``
-``sudo npm start``
+- ``./scripts/load_globals.sh``
+- ``sudo npm install --python=python2.7``
+- ``sudo npm install``
+- ``sudo npm start``
+
+As for building the final Desktop Application. You can use any of the following make commands to build them:
+
+- Mac: `make mac-64`
+- Windows 32-Bit: `make windows`
+- Windows 64-Bit: `make windows-64`
+- Linux: `make linux`
+- Linux 64-bit: `make linux-64`
+
 Make sure that the instance of API server is running to pull and push the data for your development the API can be found on this[Link](https://github.com/richard457/StreamBoxUpAPi)
 A testing key for our server can be requested by anyone who is contributing to this app.
 ## How to contribute

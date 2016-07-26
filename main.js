@@ -1,6 +1,7 @@
 'use strict';
 
 var app = require('app');
+var Tray = require('electron');
 var BrowserWindow = require('browser-window');
 var path = require('path');
 var mainWindow = null;
@@ -18,28 +19,46 @@ var ncp = require('ncp').ncp;
 var express = require('express'), cors = require('cors');
 var http = require('http');
 var configuration = require('./app_modules/configuration');
+var  configureApp =require('./app_modules/windowManager');
 var options = {
 	"debug": true,
 	"version": "1.0.0",
 	"views_dir": "App",
 	"root_view": "index.html"
 };
+
+// var  shouldQuit = app.makeSingleInstance(function() {
+//        if (mainWindow) {
+//       if (mainWindow.isMinimized()) mainWindow.restore();
+//       mainWindow.focus();
+//       mainWindow.show();
+//       mainWindow.setSkipTaskbar(false);
+//       if (app.dock && app.dock.show) app.dock.show();
+//     }
+//   });
+configureApp.defaultWindow(app);
 require('crash-reporter').start();
 app.on('ready', function() {
     if (!configuration.readSettings('shortcutKeys')) {
         configuration.saveSettings('shortcutKeys', ['ctrl', 'shift']);
         //TODO on SignUp complete with success please use the above code to save user credential for future use also encrypt it on local!
     };
+    var  iconPath =__dirname + '/dist/img/app-icon.png';
     mainWindow = new BrowserWindow({
         frame: true,
         kiosk: true,
         height: 500,   
         title:"StreamUpBox Setup",
         resizable: false,
-        width: 310
+        width: 310,
+        icon: iconPath,
+        transparent:true
     });
     mainWindow.setMenu(null);
+    
     mainWindow.loadUrl(path.join('file://', __dirname, options.views_dir, options.root_view));
+
+    new Tray(iconPath);
 
     var os = require('os'),
      userInfo = require('user-info');
@@ -59,7 +78,7 @@ app.on('ready', function() {
     
 
         console.log("Folder already exist!");
-    }
+    };
 
 
     var folderWatcher = function(object) {
@@ -68,22 +87,12 @@ app.on('ready', function() {
             if(event === "unlink"){
                 notification.send('removed files');
             }else if(event === "add"){
-                //we got a new files push them to the server
-                //TODO As we are listening on new files added please upload each on server
-                 var server = express();
-                    var corsOptions = {
-                    origin: 'http://localhost:8000/'
-                    };
-                    server.post('streamupbox.com/api/v1/upload', cors(corsOptions), function(req, res, next){
-                        console.log(res);
-                        res.json({msg: 'This is CORS-enabled for only example.com.'});
-                    });
+                
                  notification.send('add new file');
             }else if(event ==="change"){
                  notification.send('changes');
 
             }
-            
             console.log(event, path);
         });
     };
