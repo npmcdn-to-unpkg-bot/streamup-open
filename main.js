@@ -64,23 +64,21 @@ app.on('ready', function() {
      userInfo = require('user-info');
     var dir = os.homedir() +'/StreamUpBox';
     
-    
-    
-    if (!fs.existsSync(dir)){
-        fs.mkdirSync(dir);
-        fs.chmodSync(dir, '777');
-      
-        console.log("Folder created Successfully!");
-    }
-    else
-    {
-        fs.chmodSync(dir, '777');
-    
+    fs.exists(dir,function (params,status) {
+       if(status !== true){
+           fs.mkdir(dir,function(_,t){});
+           fs.chmod(dir, '777',function(_,t){
+                
+            });
+            console.log("Folder created Successfully!");
+        }else{
+             fs.chmod(dir, '777',function(_,t){
 
-        console.log("Folder already exist!");
-    };
-
-
+             });
+            console.log("Folder already exist!");
+        };
+    });
+    
     var folderWatcher = function(object) {
        
         require('chokidar').watch(os.homedir()+'/StreamUpBox', {ignored: /[\/\\]\./}).on('all', function(event, path) {
