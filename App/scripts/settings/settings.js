@@ -1,5 +1,5 @@
-/* global sync */
-sync.service('Settings', ['$http','$rootScope','$q',function ($http,$rootScope,$q) {
+/* global angular.module('sync') */
+angular.module('sync').service('Settings', ['$http','$rootScope','$q',function ($http,$rootScope,$q) {
 	this.current = function(){
         var differed = $q.defer();
         $http.get($rootScope.endPoint + '/api/v1/settings')
@@ -14,7 +14,7 @@ sync.service('Settings', ['$http','$rootScope','$q',function ($http,$rootScope,$
     return this;
 }]);
 
-sync.controller('SettingsController', ['$scope','Settings','$log', function ($scope,Settings,$log) {
+angular.module('sync').controller('SettingsController', ['$scope','Settings','$log', function ($scope,Settings,$log) {
 	$scope.init = function(){
         $scope.loadCurrentSettings();
     }

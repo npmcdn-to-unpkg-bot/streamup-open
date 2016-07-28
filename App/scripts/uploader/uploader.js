@@ -1,10 +1,10 @@
-/* global sync */
+/* global angular.module('sync') */
 /* global angular */
 'use strict';
 
 angular
 
-    sync.controller('UploadController', ['$scope', 'FileUploader','$rootScope','Files', function($scope, FileUploader,$rootScope,Files) {
+    angular.module('sync').controller('UploadController', ['$scope', 'FileUploader','$rootScope','Files', function($scope, FileUploader,$rootScope,Files) {
         var uploader = $scope.uploader = new FileUploader({
             url: $rootScope.endPoint+'/api/v1/upload'
         });

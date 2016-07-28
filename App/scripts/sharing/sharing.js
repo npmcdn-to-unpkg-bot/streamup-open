@@ -1,5 +1,5 @@
-/* global sync */
-sync.controller('ShareController', [
+/* global angular.module('sync') */
+angular.module('sync').controller('ShareController', [
 	'$scope',
 	'$rootScope',
 	'$routeParams',

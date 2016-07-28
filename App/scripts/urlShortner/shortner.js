@@ -1,4 +1,4 @@
-sync.service('urlShortener',[function(){
+angular.module('sync').service('urlShortener',[function(){
   this.makeShort = function(longUrl){
     return longUrl;
   };

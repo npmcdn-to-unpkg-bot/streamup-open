@@ -1,4 +1,4 @@
-sync.factory('userInteractionNotification', function () {
+angular.module('sync').factory('userInteractionNotification', function () {
     return {
         success: function (message) {
             toastr.success(message, "Success");

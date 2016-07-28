@@ -1,4 +1,4 @@
-sync.service('SubFolder', ['$http', '$q', '$rootScope', function($http, $q, $rootScope) 
+angular.module('sync').service('SubFolder', ['$http', '$q', '$rootScope', function($http, $q, $rootScope) 
 	{
 
 

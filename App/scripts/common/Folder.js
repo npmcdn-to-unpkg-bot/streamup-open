@@ -1,6 +1,6 @@
 
 
-sync.service('Folder', ['$http', '$q', '$rootScope', function($http, $q, $rootScope) 
+angular.module('sync').service('Folder', ['$http', '$q', '$rootScope', function($http, $q, $rootScope) 
 	{
 
 

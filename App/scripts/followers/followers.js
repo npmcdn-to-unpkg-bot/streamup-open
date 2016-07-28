@@ -1,6 +1,6 @@
-/* global sync */
+/* global angular.module('sync') */
 "use strict";
-sync.controller('PeopleController', ['$scope','People',function ($scope, People) {
+angular.module('sync').controller('PeopleController', ['$scope','People',function ($scope, People) {
 		$scope.init = function(){
 			$scope.getPeopleToFollow();
 		}

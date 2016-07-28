@@ -1,7 +1,7 @@
 /* global $window */
 /* global Logger */
-
-sync.controller('loginController',['$scope','$http','$rootScope','$window','User', function ($scope,$http,$rootScope,$window,User) {
+angular.module('sync')
+.controller('loginController',['$scope','$http','$rootScope','$window','User', function ($scope,$http,$rootScope,$window,User) {
     var init = function() {
         
         getData();

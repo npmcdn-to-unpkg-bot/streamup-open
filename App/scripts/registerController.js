@@ -1,6 +1,6 @@
-var configuration = require('./configuration');
-
-sync.controller('RegisterController', ['$scope','$rootScope','$http',function ($scope,$rootScope,$http) {
+// var configuration = require('./configuration');
+angular.module('sync')
+.controller('RegisterController', ['$scope','$rootScope','$http',function ($scope,$rootScope,$http) {
     var options = {
         'password-notMatch': 'password do not match',
         'SignUpInProgress' : 'Wait we are setting up your account.'
@@ -33,7 +33,7 @@ sync.controller('RegisterController', ['$scope','$rootScope','$http',function ($
         };
     };
 }]);
-sync.factory('isUsernameAvailable', ['$q','$http','$rootScope',function($q, $http,$rootScope) {
+angular.module('sync').factory('isUsernameAvailable', ['$q','$http','$rootScope',function($q, $http,$rootScope) {
     var options = {
         'btn-loading': '<i class="fa fa-spinner fa-pulse"></i>',
         'btn-success': '<i class="fa fa-check"></i>',
@@ -68,7 +68,7 @@ sync.factory('isUsernameAvailable', ['$q','$http','$rootScope',function($q, $htt
         return deferred.promise;
     };
 }]);
-sync.directive('uniqueEmail', ['isEmailAvailable',function(isEmailAvailable) {
+angular.module('sync').directive('uniqueEmail', ['isEmailAvailable',function(isEmailAvailable) {
     return {
         restrict: 'A',
         require: 'ngModel',
@@ -77,7 +77,7 @@ sync.directive('uniqueEmail', ['isEmailAvailable',function(isEmailAvailable) {
         }
     };
 }]);
-sync.directive('uniqueUsername', ['isUsernameAvailable',function(isUsernameAvailable) {
+angular.module('sync').directive('uniqueUsername', ['isUsernameAvailable',function(isUsernameAvailable) {
     return {
         restrict: 'A',
         require: 'ngModel',
@@ -86,7 +86,7 @@ sync.directive('uniqueUsername', ['isUsernameAvailable',function(isUsernameAvail
         }
     };
 }]);
-sync.factory('isEmailAvailable', ['$q','$http','$rootScope',function ($q, $http, $rootScope) {
+angular.module('sync').factory('isEmailAvailable', ['$q','$http','$rootScope',function ($q, $http, $rootScope) {
     var options = {
         'btn-loading': '<i class="fa fa-spinner fa-pulse"></i>',
         'btn-success': '<i class="fa fa-check"></i>',

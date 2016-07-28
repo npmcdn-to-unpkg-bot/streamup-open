@@ -1,13 +1,13 @@
-/* global sync */
+/* global angular.module('sync') */
 /**
  *  Created by Muragijimana Richard on 10/20/15.
- *  Beastar457@gmail.com , sync@gmail.com , check with me!
+ *  Beastar457@gmail.com , angular.module('sync')@gmail.com , check with me!
  */
 /*I use CamelCase while renaming my functions */
 /*and i use snake case while renaming variables */
 /*post service */
 
-sync.service('Post', ['$http', '$q', '$rootScope', function Post($http, $q, $rootScope) {
+angular.module('sync').service('Post', ['$http', '$q', '$rootScope', function Post($http, $q, $rootScope) {
     this.getPost = function (user_id) {
         var differed = $q.defer();
         $http.get($rootScope.endPoint + '/api/v1/me/posts?user_id' + user_id, {cache: false})
@@ -54,9 +54,9 @@ sync.service('Post', ['$http', '$q', '$rootScope', function Post($http, $q, $roo
         return differed.promise;
     };
     return this;
-}]);
+}])
 
-sync.controller('PostingController', [
+angular.module('sync').controller('PostingController', [
   '$scope',
   'Post',
   '$timeout',
@@ -158,7 +158,7 @@ sync.controller('PostingController', [
         return "60px";
 
       }
-      console.log(index);
+      
     };
     $scope.share = function(id){
         $ionicListDelegate.closeOptionButtons();
@@ -179,7 +179,7 @@ sync.controller('PostingController', [
 
     $scope.init();
 }]);
-sync.directive('feedsUploader',[function(){
+angular.module('sync').directive('feedsUploader',[function(){
   return {
     restrict: 'AE',
     replace: false,

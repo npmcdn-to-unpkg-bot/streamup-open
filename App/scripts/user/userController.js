@@ -1,4 +1,4 @@
-sync.controller('userController',['User','$scope',function(User,$scope){
+angular.module('sync').controller('userController',['User','$scope',function(User,$scope){
 
   $scope.options =[{logout:'logout'}];
   User.getUsername()

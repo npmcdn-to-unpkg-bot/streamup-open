@@ -1,11 +1,11 @@
-sync.controller('messagingCtrl', ['$scope','$uibModal','$mdDialog','$mdMedia','SMS', function ($scope,$uibModal, $mdDialog, $mdMedia,SMS) {
+angular.module('sync').controller('messagingCtrl', ['$scope','$uibModal','$mdDialog','$mdMedia','SMS', function ($scope,$uibModal, $mdDialog, $mdMedia,SMS) {
 	$scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
 	$scope.sendMessage = function(message){
 		// console.log(message);
 		SMS.send(message)
 		.then(function(status){
 			//alert for message sent
-			if(status==200){
+			if(status===200){
 
 				//alert this user
 			}
@@ -14,7 +14,7 @@ sync.controller('messagingCtrl', ['$scope','$uibModal','$mdDialog','$mdMedia','S
 	};
 	$scope.messageWindow = function(ev) {
 		$mdDialog.show({
-			parent: angular.element(document.body),
+			
 			controller: DialogController,
 			templateUrl: '/App/scripts/views/message.tpl.html',
 			parent: angular.element(document.body),
@@ -40,7 +40,7 @@ sync.controller('messagingCtrl', ['$scope','$uibModal','$mdDialog','$mdMedia','S
 	}
 }]);
 
-sync.controller('uploadDialogCtrl', ['$scope','$uibModal','$mdDialog','$mdMedia', function ($scope,$uibModal, $mdDialog, $mdMedia) {
+angular.module('sync').controller('uploadDialogCtrl', ['$scope','$uibModal','$mdDialog','$mdMedia', function ($scope,$uibModal, $mdDialog, $mdMedia) {
 
 				//declare global function for shortcut
 				$scope.cancel = function() {
@@ -49,7 +49,7 @@ sync.controller('uploadDialogCtrl', ['$scope','$uibModal','$mdDialog','$mdMedia'
 		    $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
 		    $scope.upload = function(ev) {
 		      $mdDialog.show({
-						parent: angular.element(document.body),
+					
 		        controller: DialogController,
 		        templateUrl: '/App/scripts/views/upload.tpl.html',
 		        parent: angular.element(document.body),
@@ -74,7 +74,7 @@ sync.controller('uploadDialogCtrl', ['$scope','$uibModal','$mdDialog','$mdMedia'
 				  };
 				}
 }]);
-sync.controller('shareController', ['$scope','$uibModal','$mdDialog','$mdMedia','urlShortener','Share','User', function ($scope,$uibModal, $mdDialog, $mdMedia,urlShortener,Share,User) {
+angular.module('sync').controller('shareController', ['$scope','$uibModal','$mdDialog','$mdMedia','urlShortener','Share','User', function ($scope,$uibModal, $mdDialog, $mdMedia,urlShortener,Share,User) {
 
 	//declare global function for shortcut
 	$scope.cancel = function() {

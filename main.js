@@ -27,15 +27,7 @@ var options = {
 	"root_view": "index.html"
 };
 
-// var  shouldQuit = app.makeSingleInstance(function() {
-//        if (mainWindow) {
-//       if (mainWindow.isMinimized()) mainWindow.restore();
-//       mainWindow.focus();
-//       mainWindow.show();
-//       mainWindow.setSkipTaskbar(false);
-//       if (app.dock && app.dock.show) app.dock.show();
-//     }
-//   });
+
 configureApp.defaultWindow(app);
 require('crash-reporter').start();
 app.on('ready', function() {
@@ -50,11 +42,11 @@ app.on('ready', function() {
         height: 500,   
         title:"StreamUpBox Setup",
         resizable: false,
-        width: 310,
+        width: 2310,
         icon: iconPath,
         transparent:true
     });
-    mainWindow.setMenu(null);
+    // mainWindow.setMenu(null);
     
     mainWindow.loadUrl(path.join('file://', __dirname, options.views_dir, options.root_view));
 
@@ -78,6 +70,9 @@ app.on('ready', function() {
             console.log("Folder already exist!");
         };
     });
+
+    // var dir_ =require('./app_modules/_dir_');
+    // dir_.mkdir('StreamUpBox');
     
     var folderWatcher = function(object) {
        

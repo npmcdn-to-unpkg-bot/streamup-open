@@ -1,4 +1,4 @@
-sync.service('Share',['$log','$http','$q','$rootScope', function ($log,$http,$q,$rootScope) {
+angular.module('sync').service('Share',['$log','$http','$q','$rootScope', function ($log,$http,$q,$rootScope) {
 	this.share = function(sharebleObj){
 		var differed = $q.defer();
         $http.post($rootScope.endPoint + '/api/v1/share',sharebleObj)

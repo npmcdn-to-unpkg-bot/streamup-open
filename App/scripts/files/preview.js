@@ -1,4 +1,4 @@
-sync.controller('previewController',
+angular.module('sync').controller('previewController',
  [
 	'$scope','pdfDelegate','$timeout','$stateParams','$rootScope','$exceptionHandler','Files', 'FileSaver','Blob',function (
 		$scope,pdfDelegate,$timeout,$stateParams,$rootScope,$exceptionHandler,Files,FileSaver, Blob) {
@@ -42,7 +42,7 @@ sync.controller('previewController',
       };
 }]);
 
-sync.directive('fileDownload', ['User',function (User) {
+angular.module('sync').directive('fileDownload', ['User',function (User) {
         return {
             restrict: 'A',
             replace: true,

@@ -1,4 +1,5 @@
-sync.service('People', ['$q','$http','$rootScope',function ($q, $http, $rootScope) {
+angular.module('sync')
+.service('People', ['$q','$http','$rootScope',function ($q, $http, $rootScope) {
 	this.get  = function (){
 		var differed = $q.defer();
 		$http.get($rootScope.endPoint + '/api/v1/suggestions')

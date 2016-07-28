@@ -1,4 +1,4 @@
-sync.service('User', ['$http','$q','$rootScope',function Files ($http,$q,$rootScope) {
+angular.module('sync').service('User', ['$http','$q','$rootScope',function Files ($http,$q,$rootScope) {
 	this.getUserId = function(){
 		var promise = $q.defer();
 		$http.get($rootScope.endPoint +"/api/v1/users/id")

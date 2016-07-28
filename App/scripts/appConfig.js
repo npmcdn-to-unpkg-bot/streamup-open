@@ -1,9 +1,9 @@
-var sync = angular.module('sync', ["ui.bootstrap","ui.router"]);
-sync.run(['$rootScope',function($rootScope){
+angular.module('sync', ["ui.bootstrap","ui.router"])
+.run(['$rootScope',function($rootScope){
       // $rootScope.endPoint='https://streamupbox.com';
       $rootScope.endPoint='http://localhost:8000';
-}]);
-sync.config(['$sceProvider','$httpProvider',function($sceProvider,$httpProvider) {
+}])
+.config(['$sceProvider','$httpProvider',function($sceProvider,$httpProvider) {
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
     $httpProvider.defaults.headers.post['Accept'] = 'application/json, text/javascript';
     $httpProvider.defaults.headers.post['Accept'] = 'application/json, text/javascript';
@@ -16,8 +16,8 @@ sync.config(['$sceProvider','$httpProvider',function($sceProvider,$httpProvider)
     $sceProvider.enabled(false);
 
     // cfpLoadingBarProvider.includeBar = false;
-}]);
-sync.config(['$stateProvider','$urlRouterProvider',function($stateProvider, $urlRouterProvider,$scope){
+}])
+.config(['$stateProvider','$urlRouterProvider',function($stateProvider, $urlRouterProvider,$scope){
     $stateProvider
     .state('Home', {
       url: "/Login",
@@ -32,7 +32,7 @@ sync.config(['$stateProvider','$urlRouterProvider',function($stateProvider, $url
     .state('SignUp', {
       url: "/signup",
       templateUrl: 'signup.html',
-      controller: 'loginController',
+      controller: 'RegisterController',
     });
     $urlRouterProvider.otherwise('/Login');
 }]);

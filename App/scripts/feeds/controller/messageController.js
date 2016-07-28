@@ -1,6 +1,6 @@
 //Author Muragijimana Richard strimup@gmail.com beastar457@gmail.com
 
-  sync.controller('MessageController', function ($http,$scope,$q,$rootScope) {
+  angular.module('sync').controller('MessageController', function ($http,$scope,$q,$rootScope) {
        $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

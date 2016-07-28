@@ -1,4 +1,5 @@
-sync.service('Files', ['$http','$q','$rootScope',function Files ($http,$q,$rootScope) {
+angular.module('sync')
+.service('Files', ['$http','$q','$rootScope',function Files ($http,$q,$rootScope) {
     this.getGroupFiles =function(groupId) {
         var differed = $q.defer();
         //down endpoint return all files I own

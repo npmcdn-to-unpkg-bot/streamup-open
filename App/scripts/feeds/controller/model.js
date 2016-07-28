@@ -1,5 +1,5 @@
 
-sync.controller("TutorialModal", function($scope) {
+angular.module('sync').controller("TutorialModal", function($scope) {
 
   $scope.open = function() {
     $scope.showModal = true;
@@ -14,7 +14,7 @@ sync.controller("TutorialModal", function($scope) {
 
 });
 
-sync.controller("StriminModal", function($scope) {
+angular.module('sync').controller("StriminModal", function($scope) {
 
   $scope.open = function() {
     $scope.showModal = true;

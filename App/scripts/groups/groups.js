@@ -1,10 +1,10 @@
 /* global Files */
-/* global sync */
+/* global angular.module('sync') */
 /* global $scope */
 /* global angular */
-/*Author Muragijimana Founder & CEO of sync call him on StrimUp@gmail.com*/
+/*Author Muragijimana Founder & CEO of angular.module('sync') call him on StrimUp@gmail.com*/
 
-sync.service('Group', [
+angular.module('sync').service('Group', [
 	'$http',
 	'$rootScope',
 	'$q',function Group (
@@ -95,7 +95,7 @@ sync.service('Group', [
 	return this;
 }]);
 
-sync.controller('GroupController', [
+angular.module('sync').controller('GroupController', [
 	'$scope',
 	'Group',
 	'User',
@@ -216,7 +216,7 @@ $scope.$on('showOptions',function(_,params){
 });
 $scope.init();
 }]);
-sync.directive('myGroups', [
+angular.module('sync').directive('myGroups', [
 	'Group',
 	'Report',
 	'userInteractionNotification',
@@ -340,7 +340,7 @@ sync.directive('myGroups', [
 	};
 }]);
 
-sync.service('Report', [function Report ($http,$q,$rootScope) {
+angular.module('sync').service('Report', [function Report ($http,$q,$rootScope) {
 	this.send = function(issue){
 		var differed = $q.defer();
 		$http.post($rootScope.endPoint + '/api/v1/issues', issue)

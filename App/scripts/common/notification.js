@@ -1,5 +1,5 @@
 /* global sync */
-sync.service('Notification', ['$http', '$q', '$rootScope', function Notification($http, $q, $rootScope) {
+angular.module('sync').service('Notification', ['$http', '$q', '$rootScope', function Notification($http, $q, $rootScope) {
     this.getNotification = function (user_id) {
         var differed = $q.defer();
         $http.get($rootScope.endPoint + '/api/v1/notifications', {cache: false})
@@ -37,7 +37,7 @@ sync.service('Notification', ['$http', '$q', '$rootScope', function Notification
     return this;
 }]);
 
-sync.controller('notificationController', ['$scope','Notification','$log', function ($scope,Notification,$log) {
+angular.module('sync').controller('notificationController', ['$scope','Notification','$log', function ($scope,Notification,$log) {
     $scope.init = function(){
         $scope.getNotification();
     }
@@ -64,7 +64,7 @@ sync.controller('notificationController', ['$scope','Notification','$log', funct
     }
     $scope.init();
 }]);
-sync.directive('notify',[function(){
+angular.module('sync').directive('notify',[function(){
   return{
     restrict:'AE',
     scope:{

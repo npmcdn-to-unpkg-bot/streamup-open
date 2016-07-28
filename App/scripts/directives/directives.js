@@ -1,4 +1,4 @@
-sync.directive('leftMenu',function(){
+angular.module('sync').directive('leftMenu',function(){
   return {
         restrict: 'AE',
         scope: {
@@ -9,7 +9,7 @@ sync.directive('leftMenu',function(){
         templateUrl: "/App/scripts/directives/leftMenu.html"
     };
 });
-sync.directive('feeds',function(){
+angular.module('sync').directive('feeds',function(){
   return {
         restrict: 'AE',
         scope: {
@@ -20,7 +20,7 @@ sync.directive('feeds',function(){
         templateUrl: "/App/scripts/directives/middleContent.html"
     };
 });
-sync.directive('header',function(){
+angular.module('sync').directive('header',function(){
   return {
         restrict: 'AE',
         scope: {
@@ -33,7 +33,7 @@ sync.directive('header',function(){
 });
 
 
-sync.directive('keybinding', function () {
+angular.module('sync').directive('keybinding', function () {
     return {
         restrict: 'E',
         scope: {

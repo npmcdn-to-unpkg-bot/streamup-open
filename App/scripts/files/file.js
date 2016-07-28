@@ -1,10 +1,10 @@
 /* global $uibModalInstance */
 /* global ModalInstanceCtrl */
 /* global $uibModal */
-/* global sync */
-/* global sync */
+/* global angular.module('sync') */
+/* global angular.module('sync') */
 
-sync.controller('SubFolderController',['$scope','SubFolder','User','DEBUG','$stateParams','$interval', function($scope,SubFolder,User,DEBUG,$stateParams,$interval){
+angular.module('sync').controller('SubFolderController',['$scope','SubFolder','User','DEBUG','$stateParams','$interval', function($scope,SubFolder,User,DEBUG,$stateParams,$interval){
   $scope.folderName= $stateParams.folderName;
   $scope.newfolder={};
   $scope.newfolder.folderId= $stateParams.id;
@@ -64,7 +64,7 @@ sync.controller('SubFolderController',['$scope','SubFolder','User','DEBUG','$sta
 
 
 
-sync.controller('FolderController',['$scope','Folder','User','DEBUG','$interval', function($scope,Folder,User,DEBUG,$interval){
+angular.module('sync').controller('FolderController',['$scope','Folder','User','DEBUG','$interval', function($scope,Folder,User,DEBUG,$interval){
    $scope.fileType  = function(type) {
       switch (type) {
         case 'pdf':
@@ -142,7 +142,7 @@ sync.controller('FolderController',['$scope','Folder','User','DEBUG','$interval'
   };
   init();
 }]);
-sync.controller('FilesController',
+angular.module('sync').controller('FilesController',
  [
 	'$scope','Files','$log','$window','User','$uibModal','$interval','pdfDelegate','$timeout','$stateParams','$rootScope','$exceptionHandler', function (
 		$scope, Files,$log,$window,User,$uibModal,$interval,pdfDelegate,$timeout,$stateParams,$rootScope,$exceptionHandler) {
@@ -234,7 +234,7 @@ sync.controller('FilesController',
 	$scope.init();
 }]);
 
-sync.directive('draggable', function() {
+angular.module('sync').directive('draggable', function() {
 
      return {
         restrict: 'AE',
@@ -268,7 +268,7 @@ sync.directive('draggable', function() {
     };
 });
 
-sync.directive('droppable', ['userInteractionNotification','Files',function(userInteractionNotification,Files) {
+angular.module('sync').directive('droppable', ['userInteractionNotification','Files',function(userInteractionNotification,Files) {
     return {
         scope: {
             drop: '&',
@@ -330,7 +330,7 @@ sync.directive('droppable', ['userInteractionNotification','Files',function(user
         }
     }
 }]);
-sync.controller('DragDropCtrl', ['$scope','Files','$interval',function($scope,Files,$interval) {
+angular.module('sync').controller('DragDropCtrl', ['$scope','Files','$interval',function($scope,Files,$interval) {
     $scope.handleDrop = function() {
       
     }
