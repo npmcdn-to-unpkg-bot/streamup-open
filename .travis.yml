@@ -1,4 +1,15 @@
 language: node_js
 node_js:
   - 6.2.1
+
+
+  before_script:
+  - npm install -g bower
+  - npm install -g gulp
+  - npm install phantomjs
+  - npm install -g karma
+  - npm install
+  - bower install
+  - npm install mocha
+  - npm install should
   
