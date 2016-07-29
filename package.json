@@ -37,18 +37,7 @@
   },
   "homepage": "",
   "devDependencies": {
-    "@angular/common": "2.0.0-rc.2",
-    "@angular/compiler": "2.0.0-rc.2",
-    "@angular/core": "2.0.0-rc.2",
-    "@angular/forms": "0.1.0",
-    "@angular/http": "2.0.0-rc.2",
-    "@angular/platform-browser": "2.0.0-rc.2",
-    "@angular/platform-browser-dynamic": "2.0.0-rc.2",
-    "@angular/router": "3.0.0-alpha.7",
-    "@angular/router-deprecated": "2.0.0-rc.2",
-    "@angular/upgrade": "2.0.0-rc.2",
-    "angular2": "2.0.0-beta.17",
-    "angular2-in-memory-web-api": "0.0.12",
+
     "babel": "6.3.26",
     "babel-core": "6.4.5",
     "babel-jest": "6.0.1",
@@ -70,7 +59,7 @@
     "electron-prebuilt": "^0.30.3",
     "electron-rebuild": "^1.1.4",
     "electron-winstaller": "2.2.0",
-    "es6-shim": "^0.35.0",
+
     "eslint": "^2.9.0",
     "eslint-config-airbnb-base": "^3.0.1",
     "eslint-plugin-import": "^1.7.0",
@@ -141,7 +130,8 @@
     "vinyl-source-stream": "^1.1.0",
     "wiredep": "3.0.0",
     "wrench": "^1.5.9",
-    "zone.js": "^0.6.12"
+    "electron": "^0.4.1",
+
   },
   "optionalDependencies": {
     "appdmg": "^0.4.5",
@@ -166,7 +156,7 @@
     "body-parser": "^1.15.1",
     "chokidar": "^1.6.0",
     "cors": "^2.7.1",
-    "electron": "^0.4.1",
+
 
     "express": "^4.14.0",
     "ftpsync": "^0.1.10",
