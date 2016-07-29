@@ -89,7 +89,7 @@
     "gulp-less": "~3.0.0",
     "gulp-load-plugins": "^0.10.0",
     "gulp-minify-html": "~1.0.0",
-    "gulp-notify": "^2.2.0",
+    
     "gulp-plumber": "^1.0.2",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",
@@ -102,7 +102,7 @@
     "gulp-webserver": "^0.9.1",
     "jasmine-core": "^2.4.1",
     "jest-cli": "0.8.2",
-    "jquery": "^2.2.3",
+    
     "jspm": "^0.16.39",
     "karma": "^0.13.19",
     "karma-chrome-launcher": "^1.0.1",
@@ -167,7 +167,7 @@
     "chokidar": "^1.6.0",
     "cors": "^2.7.1",
     "electron": "^0.4.1",
-    "electron-prebuilt": "^0.30.8",
+    
     "express": "^4.14.0",
     "ftpsync": "^0.1.10",
     "graphQl-Mysql-Server": "^1.0.10",
@@ -195,7 +195,7 @@
     "socket.io": "~0.9.16",
     "ssh2-sftp-client": "^1.0.5",
     "ts-loader": "^0.7.2",
-    "typescript": "^1.7.3",
+    
     "user-info": "^0.1.1",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
