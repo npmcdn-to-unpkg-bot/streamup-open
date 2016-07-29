@@ -42,11 +42,11 @@ app.on('ready', function() {
         height: 500,   
         title:"StreamUpBox Setup",
         resizable: false,
-        width: 2310,
+        width: 310,
         icon: iconPath,
         transparent:true
     });
-    // mainWindow.setMenu(null);
+    mainWindow.setMenu(null);
     
     mainWindow.loadUrl(path.join('file://', __dirname, options.views_dir, options.root_view));
 
