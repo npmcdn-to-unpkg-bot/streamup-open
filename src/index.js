@@ -110,25 +110,10 @@ import handleStartupEvent from './squirrel';
     mainWindow.setMenu(null);
     global.mainWindowID = WindowManager.add(mainWindow, 'main');
 
-    // const position = Settings.get('position');
-    // const inBounds = positionOnScreen(position);
+    mainWindow.loadURL(path.join('file://', __dirname, '/public_html/index.html'));
 
-    // let size = Settings.get('size');
-    // size = size || [1200, 800];
+    // mainWindow.loadUrl(path.join('file://', __dirname, options.views_dir, options.root_view));
 
-    // mainWindow.setSize(...size);
-    // if (position && inBounds) {
-    //   mainWindow.setPosition(...position);
-    // } else {
-    //   mainWindow.center();
-    // }
-
-    // if (Settings.get('maximized', false)) {
-    //   mainWindow.maximize();
-    // }
-
-    // and load the index.html of the app.
-    mainWindow.loadURL(`file://${__dirname}/public_html/index.html`);
     require('./main/features');
     require('./old_win32');
 
