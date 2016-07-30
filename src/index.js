@@ -7,7 +7,7 @@ import winston from 'winston';
 
 import configureApp from './main/configureApp';
 import generateBrowserConfig from './main/configureBrowser';
-import { positionOnScreen } from './_util';
+// import { positionOnScreen } from './_util';
 
 import EmitterClass from './main/utils/Emitter';
 import SettingsClass from './main/utils/Settings';
@@ -107,24 +107,25 @@ import handleStartupEvent from './squirrel';
   // initialization and is ready to create browser windows.
   app.on('ready', () => {
     mainWindow = new BrowserWindow(generateBrowserConfig());
+    mainWindow.setMenu(null);
     global.mainWindowID = WindowManager.add(mainWindow, 'main');
 
-    const position = Settings.get('position');
-    const inBounds = positionOnScreen(position);
+    // const position = Settings.get('position');
+    // const inBounds = positionOnScreen(position);
 
-    let size = Settings.get('size');
-    size = size || [1200, 800];
+    // let size = Settings.get('size');
+    // size = size || [1200, 800];
 
-    mainWindow.setSize(...size);
-    if (position && inBounds) {
-      mainWindow.setPosition(...position);
-    } else {
-      mainWindow.center();
-    }
+    // mainWindow.setSize(...size);
+    // if (position && inBounds) {
+    //   mainWindow.setPosition(...position);
+    // } else {
+    //   mainWindow.center();
+    // }
 
-    if (Settings.get('maximized', false)) {
-      mainWindow.maximize();
-    }
+    // if (Settings.get('maximized', false)) {
+    //   mainWindow.maximize();
+    // }
 
     // and load the index.html of the app.
     mainWindow.loadURL(`file://${__dirname}/public_html/index.html`);
