@@ -1,0 +1,20 @@
+[mini] .window-border {
+  border-top-width: 0.4em;
+}
+[mini] .window-border .title-bar {
+  display: none;
+}
+[mini] .window-border .drag-handle-large {
+  display: block !important;
+  -webkit-app-region: drag;
+}
+[mini] .window-border .embedded-player-container .embedded-player {
+  height: calc(100vh - 0.8em);
+}
+[mini] #lyrics_back {
+  display: none;
+}
+[mini].native-frame .drag-handle-large {
+  display: none !important;
+  -webkit-app-region: no-drag;
+}

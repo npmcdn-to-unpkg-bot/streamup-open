@@ -1,0 +1,13 @@
+[theme][full] .dialog {
+  background: #121314;
+  color: #FAFAFA;
+}
+[theme][full] .dialog .window-title {
+  background: #222326;
+}
+[theme][full] .dialog .tabs .tab a {
+  background: #121314;
+}
+[theme][full] .dialog .dropdown-content li {
+  background: #222326;
+}

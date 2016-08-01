@@ -7,6 +7,7 @@ export default () => {
   const defaultWidth = 310;
 
 
+
   const baseConfig = {
     width: Settings.get('width', defaultWidth),
     height: Settings.get('height', defaultHeight),

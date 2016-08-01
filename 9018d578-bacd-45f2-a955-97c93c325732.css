@@ -1,0 +1,28 @@
+[theme][full] .window-border {
+  border-color: #222326;
+}
+[theme][full] .window-border .title-bar {
+  background: #222326;
+}
+[theme][full] .window-border .embedded-player-container {
+  background: #121314;
+}
+[theme][full] .modal {
+  background-color: #222326;
+  color: #eee;
+}
+[theme][full] .modal > div {
+  background-color: #222326 !important;
+}
+[theme][full] .modal > div .modal-action {
+  color: #eee;
+}
+.offline-warning {
+  background: #222326;
+}
+.offline-warning i {
+  color: #eee;
+}
+.offline-warning h1 {
+  color: #eee;
+}
