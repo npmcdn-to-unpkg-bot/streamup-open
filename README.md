@@ -16,12 +16,11 @@ Developed by [Samuel Attard][1].
 
 No affiliation with Google. Google Play is a trademark of Google Inc.
 
-[1]: https://www.samuelattard.com
+
 
 Download
 ---------
-Head over to our website http://www.googleplaymusicdesktopplayer.com to download the latest release for your platform.
-
+our web streamupbox.com will contain the link soon....
 OS Support
 ------------
 
@@ -63,7 +62,7 @@ updates as to the state of GPMDP or needs to control GPMDP you should use the
 Issues
 -------
 If you have any bugs / issues please check the
-[FAQ](https://github.com/MarshallOfSound/Google-Play-Music-Desktop-Player-UNOFFICIAL-/wiki/FAQ)
+refer to master branch
 first before raising an issue
 
 
@@ -104,10 +103,7 @@ If you find something wrong (theming issues, app crashes) please report them as 
 If you think you can add something cool or fix a problem, fork the repo and make a pull request :D
 
 **NOTE:** Some of the functionality in this app has been extracted into smaller submodules. In particular
-* Google Play Music Interaction - https://github.com/gmusic-utils/gmusic.js
-* Theming - https://github.com/gmusic-utils/gmusic-theme.js
-* Mini Player - https://github.com/GPMDP/gmusic-mini-player.js
-* Electron Chromecast - https://github.com/GPMDP/electron-chromecast
+
 
 Dev Requirements
 ----------------
@@ -126,9 +122,9 @@ You can download the latest signed installers for Windows from the artifacts sec
 You can download the latest signed package for OS X from the URL at the bottom of the build log on Travis CI  
 You can download the latest linux (debian and fedora) builds from the artifacts section on Circle CI
 
-[2]: https://ci.appveyor.com/project/MarshallOfSound/google-play-music-desktop-player-unofficial
-[3]: https://travis-ci.org/MarshallOfSound/Google-Play-Music-Desktop-Player-UNOFFICIAL-
-[4]: https://circleci.com/gh/MarshallOfSound/Google-Play-Music-Desktop-Player-UNOFFICIAL-
+[2]: comming soon
+[3]: comming soon
+[4]: comming soon
 
 License
 -------
