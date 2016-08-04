@@ -6,18 +6,13 @@ var BrowserWindow = require('browser-window');
 var path = require('path');
 var mainWindow = null;
 var globalShortcut = require('global-shortcut');
-var _ = require('lodash');
 
-var shell = require('shelljs');
 var notification = require('./app_modules/notifier');
 var child_process = require('child_process');
-var graphql = require ('graphql').graphql;
-var chokidar= require('chokidar');
-var mkdirp = require('mkdirp');
+
+
 var fs = require('fs');
-var ncp = require('ncp').ncp;
-var express = require('express'), cors = require('cors');
-var http = require('http');
+
 var configuration = require('./app_modules/configuration');
 var  configureApp =require('./app_modules/windowManager');
 var options = {
@@ -71,8 +66,7 @@ app.on('ready', function() {
         };
     });
 
-    // var dir_ =require('./app_modules/_dir_');
-    // dir_.mkdir('StreamUpBox');
+    
     
     var folderWatcher = function(object) {
        
@@ -113,4 +107,3 @@ ipc.on('close-main-window', function () {
     app.quit();
 });
 
-var settingsWindow = null;

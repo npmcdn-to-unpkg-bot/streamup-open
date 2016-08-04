@@ -10,3 +10,4 @@ describe('My Sample JS', function() {
     console.log(SampleApp);
   });
 });
+

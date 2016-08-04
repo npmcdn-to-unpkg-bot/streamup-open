@@ -5,19 +5,37 @@
   "main": "main.js",
   "author": "beastar457@gmail.com",
   "engines": {
-    "node": "4.2.x"
+    "node": "6.2.x"
   },
   "scripts": {
-    "build": "webpack --progress --profile --colors --display-error-details --display-cached",
-    "start": "gulp && electron .",
-    "lite": "lite-server",
-    "postinstall": "typings install",
-    "debug": "node-inspector && electron --debug=5858 && ",
-    "test": "./node_modules/jshint/bin/jshint testingTravis.js",
-    "test-angularjs": "karma start --auto-watch",
-    "tsc": "tsc",
-    "tsc:w": "tsc -w",
-    "typings": "typings"
+    
+      "start": "gulp && electron . --dev",
+      "build": "gulp build",
+      "clean": "gulp clean",
+      "lint": "eslint ./src/ ./test/ ./vendor/",
+      "make:darwin": "gulp make:darwin",
+      "make:linux": "gulp make:linux",
+      "make:deb": "gulp make:linux:deb",
+      "make:rpm": "gulp make:linux:rpm",
+      "make:deb:32": "gulp deb:linux:32",
+      "make:deb:64": "gulp deb:linux:64",
+      "make:rpm:32": "gulp rpm:linux:32",
+      "make:rpm:64": "gulp rpm:linux:64",
+      "make:win": "gulp make:win && npm run postinstall",
+      "package:darwin": "gulp package:darwin",
+      "package:linux": "gulp package:linux",
+      "package:linux:32": "gulp package:linux:32",
+      "package:linux:64": "gulp package:linux:64",
+      "package:win": "gulp package:win && npm run postinstall",
+      "postinstall": "node vendor/rebuild.js --instant",
+      "test": "npm run lint",
+      "pretest-unit": "npm run build",
+      "pretest-spec": "npm run build",
+      "debug": "node-inspector && electron --debug=5858 && ",
+      "test": "mocha",
+      "test-angularjs": "karma start --auto-watch",
+    
+     "watch": "gulp watch"
   },
   "repository": {
     "type": "git",
@@ -131,6 +149,11 @@
     "electron-installer-redhat": "^0.2.0",
     "ll-keyboard-hook-win": "^3.0.0"
   },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
   "jspm": {
     "dependencies": {},
     "devDependencies": {
@@ -140,6 +163,7 @@
     }
   },
   "dependencies": {
+    "auto-launch": "^2.0.1",
     "angular": "^1.5.7",
     "bindings": "^1.2.1",
     "body-parser": "^1.15.1",

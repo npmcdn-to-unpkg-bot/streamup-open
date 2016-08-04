@@ -1,15 +1,17 @@
 var should = require('should'),
     mocha = require('supertest'),
-      _dir_ =require('../app_modules/_dir_');
+      dir =require('../app_modules/dir');
 
 
-describe('state',function() {
+describe('StreamUpBoxDeskTop Testing Suite',function() {
     it('should initiate app with some usefull credential',function(done){
+
         done();
     });
     it('should create app DIR on start of application',function(done){
         // throw "don't pass this test";
-        if(_dir_.mkdir('obn') ===200){
+        if(dir.mkdir('MeAndYou')){
+            
             done();
         }else{
             throw 'we failed to create a folder with success';
