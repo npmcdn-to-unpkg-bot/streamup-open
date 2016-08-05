@@ -25,7 +25,6 @@ branches:
 script:
   - npm run test
   
-  - if [[ $TRAVIS_PULL_REQUEST == "false" ]]; then  make:darwin ; fi
   
   
 
