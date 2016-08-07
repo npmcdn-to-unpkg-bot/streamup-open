@@ -16,13 +16,25 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       
-      'App/bower_resources/angular/angular.min.js',
       'App/bower_resources/jquery/dist/jquery.min.js',
-      'bower_resources/angular-bootstrap/ui-bootstrap-tpls.min.js',
-      'bower_resources/angular-ui-router/release/angular-ui-router.js',
-      'bower_resources/angular-bootstrap/ui-bootstrap-tpls.js',
+      'App/bower_resources/angular/angular.js',
+      './App/bower_resources/angular-bootstrap/ui-bootstrap-tpls.min.js',
+
+      './App/bower_resources/angular-bootstrap/ui-bootstrap-tpls.js',
+      './App/bower_resources/angular-ui-router/release/angular-ui-router.js',
+      './App/bower_resources/ngInfiniteScroll/build/ng-infinite-scroll.js',
+      './App/bower_resources/angular-animate/angular-animate.min.js',
+      './App/bower_resources/angular-route/angular-route.min.js',
+      './App/bower_resources/angular-aria/angular-aria.min.js',
+      './App/bower_resources/angular-messages/angular-messages.min.js',
+     
+      './App/bower_resources/mousetrap/mousetrap.js',
+      './App/bower_resources/ng-contextmenu/dist/ng-contextmenu.min.js',
+      './App/bower_resources/ng-dialog/js/ngDialog.min.js',
+      './App/bower_resources/angular-material/angular-material.min.js',
+      'App/bower_resources/angular-route/angular-route.js',
       'App/bower_resources/angular-mocks/angular-mocks.js',
-      
+       './App/scripts/appConfig.js',
       'App/scripts/**/*.js',
       '__tests__/**/*.spec.js'
     ],

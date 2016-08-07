@@ -38,7 +38,7 @@ angular.module('sync').controller('SubFolderController',['$scope','SubFolder','U
       
       SubFolder.createSubFolder(newfolder)
       .then(function(response){
-        if(response.SubfolderCreated == false){
+        if(response.SubfolderCreated === false){
           notie.alert(3, 'Sub Folder  exist!', 2);
         }else{
          notie.alert(4, 'Sub Folder created successfull.', 2);
@@ -50,7 +50,7 @@ angular.module('sync').controller('SubFolderController',['$scope','SubFolder','U
       },function(err){
 
         //$scope.errors = err;
-        if(DEBUG == true)
+        if(DEBUG === true)
               // notie.alert(3, 'Folder already exist. Please Change folder name!.', 2);
             //$scope.errors = err.message;
               console.log(err);
@@ -110,7 +110,7 @@ angular.module('sync').controller('FolderController',['$scope','Folder','User','
         $scope.folders = folders;
 
       },function(err){
-        if(DEBUG == true)
+        if(DEBUG === true)
             console.log(err);
       })
   };
@@ -127,7 +127,7 @@ angular.module('sync').controller('FolderController',['$scope','Folder','User','
 
       Folder.createFolder(newfolder)
       .then(function(response){
-        if(response.folderCreated == false){
+        if(response.folderCreated === false){
           notie.alert(3, 'Folder  exist!', 2);
         }else{
          notie.alert(4, 'Folder created successfull.', 2);
@@ -135,7 +135,7 @@ angular.module('sync').controller('FolderController',['$scope','Folder','User','
 
       },function(err){
 
-        if(DEBUG == true)
+        if(DEBUG === true)
               console.log(err);
 
       });
@@ -144,8 +144,8 @@ angular.module('sync').controller('FolderController',['$scope','Folder','User','
 }]);
 angular.module('sync').controller('FilesController',
  [
-	'$scope','Files','$log','$window','User','$uibModal','$interval','pdfDelegate','$timeout','$stateParams','$rootScope','$exceptionHandler', function (
-		$scope, Files,$log,$window,User,$uibModal,$interval,pdfDelegate,$timeout,$stateParams,$rootScope,$exceptionHandler) {
+	'$scope','Files','$log','$window','User','$uibModal','$interval','$timeout','$stateParams','$rootScope','$exceptionHandler', function (
+		$scope, Files,$log,$window,User,$uibModal,$interval,$timeout,$stateParams,$rootScope,$exceptionHandler) {
 	  $scope.init = function(){
       //load all box files
 		    $scope.all();

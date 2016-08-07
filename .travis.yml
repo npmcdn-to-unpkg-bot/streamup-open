@@ -11,12 +11,9 @@ install:
   - nvm install 6.3.0
   - nvm use 6.3.0
   - npm i -g npm
-  - npm install -g bower
-  - rm -rf node_modules
+  - ./scripts/load_globals.sh
+  - npm install --python=python2.7
   - npm install
-  - npm i -g node-sass
-  - npm rebuild node-sass
-  - bower install 
 
 branches:
   except:
