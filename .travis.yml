@@ -12,7 +12,7 @@ install:
   - nvm use 6.3.0
   - npm i -g npm
   - ./scripts/load_globals.sh
-  - npm install --python=python2.7
+  
   - npm install
 
 branches:
