@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My login</title>
+</head>
+<body>
+<div class="settings">Settings</div>
+<!--<div class="close">Close</div>-->
+
+<img class="img" src="../dist/img/app-icon.ico"/>
+<div class="text-center">
+  <h1><br><br><br><br> </h1> 
+</div>
+
+<div ng-controller="loginController" >
+  <form>
+  <div class="form-main">
+    <div id="messages"></div>
+    <div class="form-container">
+      <input class="form-control" type="text" ng-model="data.username" placeholder="Username" autofocus /><br><br>
+      <input class="form-control" type="password" placeholder="password" ng-model="data.password"/><br><br>
+      <button type="submit" class="stupbx-btn btn-info" ng-click="doLogin(data)">Sign In</button>
+    </div>
+  </div>
+</form>
+</div>
+<section class="helper-menus">
+  <div class="pull-left">
+    <a href="#/signup">Sign up</a>
+  </div>
+  <div class="pull-right problems">
+      <a class="">Problems signing in?</a>
+  </div>
+</section>
+</body>
+</html>
