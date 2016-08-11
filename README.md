@@ -1,4 +1,7 @@
 
+- Curent Build
+[![Build Status](https://travis-ci.org/richard457/streamup-open.svg?branch=master)](https://travis-ci.org/richard457/streamup-open)
+
 StreamupBoxDeskTopApp (hacking version) 
 
 StreamupBoxDeskTopApp (hacking Version)  App Based on StreamUpBox API found here[Link](https://github.com/richard457/StreamBoxUpAPi) is an Open-Source project to support StreamUpBox for desktop Mac, Windows, and Linux. <br>
